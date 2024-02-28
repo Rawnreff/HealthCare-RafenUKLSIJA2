@@ -1,0 +1,81 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d9f1f3;
+}
+
+.regist-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 26px;
+}
+
+.form {
+    margin-top: 24px;
+}
+
+label {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+input{
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    width: calc(100% - 2.5px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    margin-top: 10px;
+    width: 400px;
+    padding: 10px;
+    background-color: #4cafa8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #569099;
+}
+
+.regist {
+    margin-top: 5px;
+    margin-bottom: -15px;
+    text-align: center;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.regist a {
+    text-decoration: none;
+    color: black;
+}
+
+.regist a:hover {
+    text-decoration: underline;
+    color: #4cafa8;
+}
