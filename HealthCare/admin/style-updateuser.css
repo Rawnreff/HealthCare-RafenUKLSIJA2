@@ -42,7 +42,7 @@ input[type="password"] {
 .button {
     width: 100%;
     padding: 10px;
-    background-color: var(--main-color);
+    background-color: #4cafa8;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -51,7 +51,7 @@ input[type="password"] {
 }
 
 .button:hover {
-    background-color: #4cafa8;
+    background-color: var(--main-color);
 }
 
 .forgot {
