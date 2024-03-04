@@ -69,7 +69,7 @@
     <!-- motivation -->
     <div class="motivation">
       <div class="motivation-image">
-        <img src="Image/bodygoals.jpg" alt="" />
+        <img src="Image/bodygoal.jpg" alt="" />
       </div>
       <div class="motivation-text">
         <h2>

@@ -6,8 +6,8 @@ $databaseEmail = "";
 $databasePassword = "";
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 if($mysqli){
-    echo "koneksi database berhasil.<br/>";
+    echo "";
 }else {
-    echo "Koneksi gagal: " . mysqli_connect_error() . "<br/>";
+    echo "" . mysqli_connect_error() . "<br/>";
 }
 ?>
