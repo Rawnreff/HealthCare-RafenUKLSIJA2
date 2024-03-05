@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="regist-container">
-        <h1 class="title">Resgistration</h1>
+        <h1 class="title">Registration</h1>
         <form class="form" action="register.php" method="post">
 
             <label for="name">Name:</label>
