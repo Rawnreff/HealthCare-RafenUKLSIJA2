@@ -35,7 +35,7 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>id_user</th>
+                <th>Id User</th>
                 <th>Name</th>
                 <th>Username</th>
                 <th>Password</th>
