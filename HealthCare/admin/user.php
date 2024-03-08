@@ -14,6 +14,8 @@
     />
     <link rel="stylesheet" href="style-page.css">
     <script src="main.js"></script>
+
+    //sudah di edit
 </head>
 <body>
     <header>
