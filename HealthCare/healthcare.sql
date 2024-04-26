@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 29, 2024 at 04:09 AM
+-- Generation Time: Apr 26, 2024 at 03:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,40 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daily_workout`
+-- Table structure for table `article`
 --
 
-CREATE TABLE `daily_workout` (
-  `id_workout` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(225) DEFAULT NULL,
-  `duration` varchar(11) NOT NULL
+CREATE TABLE `article` (
+  `id_article` int(11) NOT NULL,
+  `id_masterkey` int(11) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `title` varchar(225) NOT NULL,
+  `content` varchar(225) NOT NULL,
+  `additional_information` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `healthy_food`
+-- Table structure for table `masterkey`
 --
 
-CREATE TABLE `healthy_food` (
-  `id_food` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(225) DEFAULT NULL,
-  `recipe` varchar(225) NOT NULL
+CREATE TABLE `masterkey` (
+  `id_masterkey` int(11) NOT NULL,
+  `id_personalization` int(11) NOT NULL,
+  `key` varchar(225) NOT NULL,
+  `trend_key` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sleep_program`
+-- Table structure for table `personalization`
 --
 
-CREATE TABLE `sleep_program` (
-  `id_program` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(225) DEFAULT NULL,
-  `tips` varchar(225) NOT NULL
+CREATE TABLE `personalization` (
+  `id_personalization` int(11) NOT NULL,
+  `id_subscription` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `preferences` varchar(225) NOT NULL,
+  `additional_preferences` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -70,8 +73,8 @@ CREATE TABLE `subscription` (
   `id_subscription` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `plan_name` varchar(50) NOT NULL,
-  `plan_description` varchar(225) NOT NULL,
-  `plan_price` varchar(225) NOT NULL
+  `plan_price` varchar(225) NOT NULL,
+  `status` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -94,30 +97,35 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `name`, `username`, `email`, `password`, `level`) VALUES
-(1, 'user', 'user', 'user@gmail.com', '1234', 'user'),
-(2, 'admin', 'admin', 'admin@gmail.com', '1234', 'admin');
+(9, 'admin', 'admin', 'admin@gmail.com', '1234', 'admin'),
+(11, 'user', 'user', 'user@gmail.com', '1234', 'user'),
+(12, 'userpremium', 'userprem', 'userprem@gmail.com', '4321', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `daily_workout`
+-- Indexes for table `article`
 --
-ALTER TABLE `daily_workout`
-  ADD PRIMARY KEY (`id_workout`);
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id_article`),
+  ADD KEY `fk_article_relation_masterkey` (`id_masterkey`);
 
 --
--- Indexes for table `healthy_food`
+-- Indexes for table `masterkey`
 --
-ALTER TABLE `healthy_food`
-  ADD PRIMARY KEY (`id_food`);
+ALTER TABLE `masterkey`
+  ADD PRIMARY KEY (`id_masterkey`),
+  ADD KEY `fk_masterkey_relation_personalization` (`id_personalization`);
 
 --
--- Indexes for table `sleep_program`
+-- Indexes for table `personalization`
 --
-ALTER TABLE `sleep_program`
-  ADD PRIMARY KEY (`id_program`);
+ALTER TABLE `personalization`
+  ADD PRIMARY KEY (`id_personalization`),
+  ADD KEY `fk_personalization_relation_user` (`id_user`),
+  ADD KEY `fk_personalization_relation_subscription` (`id_subscription`);
 
 --
 -- Indexes for table `subscription`
@@ -137,22 +145,22 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `daily_workout`
+-- AUTO_INCREMENT for table `article`
 --
-ALTER TABLE `daily_workout`
-  MODIFY `id_workout` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `article`
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `healthy_food`
+-- AUTO_INCREMENT for table `masterkey`
 --
-ALTER TABLE `healthy_food`
-  MODIFY `id_food` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `masterkey`
+  MODIFY `id_masterkey` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sleep_program`
+-- AUTO_INCREMENT for table `personalization`
 --
-ALTER TABLE `sleep_program`
-  MODIFY `id_program` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `personalization`
+  MODIFY `id_personalization` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subscription`
@@ -164,11 +172,30 @@ ALTER TABLE `subscription`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `article`
+--
+ALTER TABLE `article`
+  ADD CONSTRAINT `fk_article_relation_masterkey` FOREIGN KEY (`id_masterkey`) REFERENCES `masterkey` (`id_masterkey`);
+
+--
+-- Constraints for table `masterkey`
+--
+ALTER TABLE `masterkey`
+  ADD CONSTRAINT `fk_masterkey_relation_personalization` FOREIGN KEY (`id_personalization`) REFERENCES `personalization` (`id_personalization`);
+
+--
+-- Constraints for table `personalization`
+--
+ALTER TABLE `personalization`
+  ADD CONSTRAINT `fk_personalization_relation_subscription` FOREIGN KEY (`id_subscription`) REFERENCES `subscription` (`id_subscription`),
+  ADD CONSTRAINT `fk_personalization_relation_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `subscription`
