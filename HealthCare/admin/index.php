@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="style-page.css">
+    <link rel="stylesheet" href="style_page.css">
     <script src="main.js"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
         <i class='bx bx-menu' id="menu-icon"></i>
         <ul class="navbar">
             <li><a href="index.php">Home</a></li>
-            <li><a href="user.php">User Page</a></li>
+            <li><a href="adminuser.php">User Page</a></li>
         </ul>
     </header>
     <section class="user">

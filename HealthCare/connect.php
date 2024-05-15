@@ -8,6 +8,6 @@ $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $d
 if($mysqli){
     echo "";
 }else {
-    echo "" . mysqli_connect_error() . "<br/>";
+    echo "tidak terkoneksi" . mysqli_connect_error() . "<br/>";
 }
 ?>

@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="style-page.css">
+    <link rel="stylesheet" href="style_page.css">
     <script src="main.js"></script>
 </head>
 <body>
@@ -22,14 +22,14 @@
         </div>
         <i class='bx bx-menu' id="menu-icon"></i>
         <ul class="navbar">
-            <li><a href="Index.php">Home</a></li>
-            <li><a href="user.php">User Page</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="adminuser.php">User Page</a></li>
         </ul>
     </header>
     <section class="user">
     <h1 class="heading">User Data</h1>
     <br>
-        <a href="../register.php" class="btn">Add User</a>
+        <a href="adminuseradd.php" class="btn">Add User</a>
         <br>
         <br>
         <table border="1" class="table">
@@ -58,8 +58,8 @@
                 <td><?php echo $data['password']; ?></td>
                 <td><?php echo $data['email']; ?></td>
                 <td><?php echo $data['level']; ?></td>
-                <td><a href="hapus_user.php?id=<?php echo $data['id_user']; ?>" class="btn-hapus">Hapus</a> </td>
-                <td><a href="update_user.php?id=<?php echo $data['id_user']; ?>" class="btn-update">Update</a> </td>
+                <td><a href="adminuserdelete.php?id=<?php echo $data['id_user']; ?>" class="btn-hapus">Delete</a> </td>
+                <td><a href="adminuserupdate.php?id=<?php echo $data['id_user']; ?>" class="btn-update">Update</a> </td>
             </tr>
             <?php } ?>
         </table>
