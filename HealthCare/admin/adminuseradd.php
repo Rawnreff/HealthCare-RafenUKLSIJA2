@@ -9,7 +9,7 @@
 <body>
     <div class="regist-container">
         <h1 class="title">Add User</h1>
-        <form class="form" action="register.php" method="post">
+        <form class="form" action="adminuseradd.php" method="post">
 
             <label for="name">Name:</label>
             <input type="text" name="name" required><br>
@@ -29,11 +29,8 @@
                 <option value="admin">Admin</option>
             </select><br>
 
-            <button class="button" type="Submit" name="Submit">Register</button>
+            <button class="button" type="Submit" name="Submit">Add</button>
         </form>
-        <div class="regist">
-            <p>Do you have an account? <a href="login.php">Login here</a></p>
-        </div>
     </div>
 
 <?php
@@ -45,7 +42,7 @@ if (isset($_POST['Submit'])) {
     $level= $_POST['level'];
     echo($password);
 
-    include_once("connect.php");
+    include_once("../connect.php");
 
     $result = mysqli_query($mysqli,"INSERT INTO user(name,email,username,password,level)
     VALUES('$name','$email','$username','$password','$level')");

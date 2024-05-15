@@ -22,7 +22,7 @@
         </div>
         <i class='bx bx-menu' id="menu-icon"></i>
         <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
             <li><a href="adminuser.php">User</a></li>
             <li><a href="adminsubs.php">Subscription</a></li>
             <li><a href="adminperson.php">Personalization</a></li>
@@ -30,40 +30,38 @@
         </ul>
     </header>
     <section class="user">
-    <h1 class="heading">User Data</h1>
+    <h1 class="heading">Subscription Data</h1>
     <br>
     <br>
-        <a href="adminuseradd.php" class="btn">Add User</a>
+        <a href="adminsubsadd.php" class="btn">Add Subscription</a>
         <br>
         <br>
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
+                <th>Id Subscription</th>
                 <th>Id User</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Email</th>
-                <th>Level</th>
+                <th>Plan Name</th>
+                <th>Plan Price</th>
+                <th>Status</th>
                 <th>Action</th>
                 <th>Action</th>
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_error($mysqli));
+            $query_mysql = mysqli_query($mysqli, "SELECT * FROM subscription") or die(mysqli_error($mysqli));
             $nomor = 1;
             while($data = mysqli_fetch_array($query_mysql)) { 
             ?>
             <tr>
                 <td><?php echo $nomor++; ?></td>
+                <td><?php echo $data['id_subscription']; ?></td>
                 <td><?php echo $data['id_user']; ?></td>
-                <td><?php echo $data['name']; ?></td>
-                <td><?php echo $data['username']; ?></td>
-                <td><?php echo $data['password']; ?></td>
-                <td><?php echo $data['email']; ?></td>
-                <td><?php echo $data['level']; ?></td>
-                <td><a href="adminuserdelete.php?id=<?php echo $data['id_user']; ?>" class="btn-hapus">Delete</a> </td>
-                <td><a href="adminuserupdate.php?id=<?php echo $data['id_user']; ?>" class="btn-update">Update</a> </td>
+                <td><?php echo $data['plan_name']; ?></td>
+                <td><?php echo $data['plan_price']; ?></td>
+                <td><?php echo $data['status']; ?></td>
+                <td><a href="adminsubsdelete.php?id=<?php echo $data['id_subscription']; ?>" class="btn-hapus">Delete</a> </td>
+                <td><a href="adminsubsupdate.php?id=<?php echo $data['id_subscription']; ?>" class="btn-update">Update</a> </td>
             </tr>
             <?php } ?>
         </table>
