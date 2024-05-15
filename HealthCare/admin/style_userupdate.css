@@ -39,6 +39,14 @@ input[type="password"] {
     border-radius: 5px;
 }
 
+input{
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .button {
     width: 100%;
     padding: 10px;
