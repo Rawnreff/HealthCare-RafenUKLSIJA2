@@ -36,7 +36,15 @@ if(isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Subscription</title>
     <link rel="icon" type="image/png" href="../logotitle.png">
-    <link rel="stylesheet" href="style_userupdate.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style_update.css">
 </head>
 <body>
     <div class="container">
