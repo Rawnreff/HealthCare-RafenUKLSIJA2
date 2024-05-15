@@ -2,29 +2,28 @@
 include '../connect.php';
 
 if(isset($_GET['id'])) {
-    $id_subscription = $_GET['id'];
+    $id_personalization = $_GET['id'];
 
     if(isset($_POST['submit'])) {
-        $plan_name = $_POST['plan_name'];
-        $plan_price = $_POST['plan_price'];
-        $status = $_POST['status'];
+        $preferences = $_POST['preferences'];
+        $additional_preferences = $_POST['additional_preferences'];
 
-        $query = "UPDATE subscription SET plan_name='$plan_name', plan_price='$plan_price', status='$status' WHERE id_subscription='$id_subscription'";
+        $query = "UPDATE personalization SET preferences='$preferences', additional_preferences='$additional_preferences' WHERE id_personalization='$id_personalization'";
         $result = mysqli_query($mysqli, $query);
 
         if($result) {
-            header("Location: adminsubs.php");
+            header("Location: adminperson.php");
             exit;
         } else {
             echo "Error: " . mysqli_error($mysqli);
         }
     }
 
-    $query = "SELECT * FROM subscription WHERE id_subscription='$id_subscription'";
+    $query = "SELECT * FROM personalization WHERE id_personalization='$id_personalization'";
     $result = mysqli_query($mysqli, $query);
     $data = mysqli_fetch_assoc($result);
 } else {
-    header("Location: adminsubs.php");
+    header("Location: adminperson.php");
     exit;
 }
 ?>
@@ -34,7 +33,7 @@ if(isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Subscription</title>
+    <title>Update Personalization</title>
     <link rel="icon" type="image/png" href="../logotitle.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
@@ -49,23 +48,17 @@ if(isset($_GET['id'])) {
 <body>
     <div class="container">
         <header>
-            <h1 class="title">Update Subscription</h1>
+            <h1 class="title">Update Personalization</h1>
         </header>
         <section class="form">
         <form method="POST" action="">
 
-            <label for="plan_name">Plan Name:</label><br>
-            <input type="text" id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>"><br>
-            <label for="plan_price">Plan Price:</label><br>
-            <input type="text" id="plan_price" name="plan_price" value="<?php echo $data['plan_price']; ?>"><br>
+            <label for="preferences">Preferences:</label><br>
+            <input type="text" id="preferences" name="preferences" value="<?php echo $data['preferences']; ?>"><br>
+            <label for="additional_preferences">Addtional Preferences:</label><br>
+            <input type="text" id="additional_preferences" name="additional_preferences" value="<?php echo $data['additional_preferences']; ?>"><br>
             
-            <label for="status">Status:</label><br>
-                <select requiredid id="status" name="status" value="<?php echo $data['status']; ?>">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select> 
-                
-                <br><br>
+                <br>
                 
             <input type="submit" name="submit" value="Update" class="button">
         </form>
