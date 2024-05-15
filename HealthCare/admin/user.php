@@ -58,7 +58,7 @@
                 <td><?php echo $data['password']; ?></td>
                 <td><?php echo $data['email']; ?></td>
                 <td><?php echo $data['level']; ?></td>
-                <td><a href="delete_user.php?id=<?php echo $data['id_user']; ?>" class="btn-delete">Delete</a> </td>
+                <td><a href="hapus_user.php?id=<?php echo $data['id_user']; ?>" class="btn-hapus">Hapus</a> </td>
                 <td><a href="update_user.php?id=<?php echo $data['id_user']; ?>" class="btn-update">Update</a> </td>
             </tr>
             <?php } ?>
