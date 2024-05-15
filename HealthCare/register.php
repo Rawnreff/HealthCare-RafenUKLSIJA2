@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="style-reg.css">
+    <link rel="stylesheet" href="style_reg.css">
 </head>
 <body>
     <div class="regist-container">
