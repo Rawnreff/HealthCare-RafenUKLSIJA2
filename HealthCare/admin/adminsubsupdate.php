@@ -49,14 +49,17 @@ if(isset($_GET['id'])) {
 <body>
     <div class="container">
         <header>
-            <h1 class="title">Update Produk</h1>
+            <h1 class="title">Update Subscription</h1>
         </header>
         <section class="form">
         <form method="POST" action="">
 
+            <label for="password">Plan Name:</label><br>
             <input type="text" id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>"><br>
+            <label for="password">Plan Price:</label><br>
             <input type="text" id="plan_price" name="plan_price" value="<?php echo $data['plan_price']; ?>"><br>
-
+            
+            <label for="password">Status:</label><br>
                 <select requiredid id="status" name="status" value="<?php echo $data['status']; ?>">
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
