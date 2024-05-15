@@ -22,12 +22,6 @@
     
             <label for="password">Password:</label>
             <input type="password" name="password" required><br>
-
-            <label for="level">Level:</label>
-            <select name="level" required>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select><br>
     
             <button class="button" type="Submit" name="Submit">Register</button>
         </form>
@@ -42,7 +36,7 @@ if (isset($_POST['Submit'])) {
     $email= $_POST['email'];
     $username= $_POST['username'];
     $password= $_POST['password'];
-    $level= $_POST['level'];
+    $level= 'user';
     echo($password);
 
     include_once("connect.php");

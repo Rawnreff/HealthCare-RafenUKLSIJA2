@@ -3,9 +3,9 @@ include '../connect.php';
 
 $id_user = $_GET['id'];
 
-$hapus = mysqli_query($mysqli, "DELETE FROM user WHERE id_user = '$id_user'") or die(mysqli_error($mysqli));
+$delete = mysqli_query($mysqli, "DELETE FROM user WHERE id_user = '$id_user'") or die(mysqli_error($mysqli));
 
-if($hapus) {
+if($delete) {
     header("Location: user.php");
     exit();
 } else {
