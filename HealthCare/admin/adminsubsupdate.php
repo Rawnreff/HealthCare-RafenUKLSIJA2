@@ -55,7 +55,11 @@ if(isset($_GET['id'])) {
         <form method="POST" action="">
 
             <label for="plan_name">Plan Name:</label><br>
-            <input type="text" id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>"><br>
+                <select requiredid id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>">
+                    <option value="premium plan">Premium</option>
+                    <option value="free plan">Free</option>
+                </select>
+
             <label for="plan_price">Plan Price:</label><br>
             <input type="text" id="plan_price" name="plan_price" value="<?php echo $data['plan_price']; ?>"><br>
             
@@ -63,7 +67,7 @@ if(isset($_GET['id'])) {
                 <select requiredid id="status" name="status" value="<?php echo $data['status']; ?>">
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
-                </select> 
+                </select>
                 
                 <br><br>
                 
