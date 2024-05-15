@@ -17,24 +17,24 @@
 <body>
     <div class="regist-container">
         <h1 class="title">Add Subscription</h1>
-        <form class="form" action="adminuseradd.php" method="post">
+        <form class="form" action="adminsubsadd.php" method="post">
 
             <label for="id_user">Id User:</label>
             <input type="text" name="id_user" required><br>
             
-            <label for="email">E-mail:</label>
-            <input type="text" name="email" required><br>
+            <label for="plan_name">Plan Name:</label>
+            <select name="plan_name" required>
+                <option value="premium plan">Premium</option>
+                <option value="free plan">Free Plan</option>
+            </select><br>
+
+            <label for="plan_price">Plan Price:</label>
+            <input type="text" name="plan_price" required><br>
     
-            <label for="username">Username:</label>
-            <input type="text" name="username" required><br>
-    
-            <label for="password">Password:</label>
-            <input type="password" name="password" required><br>
-            
-            <label for="level">Level:</label>
-            <select name="level" required>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
+            <label for="status">Status:</label>
+            <select name="status" required>
+                <option value="active">Active</option>
+                <option value="inactive">Inacive</option>
             </select><br>
 
             <button class="button" type="Submit" name="Submit">Add</button>
@@ -43,19 +43,17 @@
 
 <?php
 if (isset($_POST['Submit'])) {
-    $name= $_POST['name'];
-    $email= $_POST['email'];
-    $username= $_POST['username'];
-    $password= $_POST['password'];
-    $level= $_POST['level'];
-    echo($password);
+    $id_user= $_POST['id_user'];
+    $plan_name= $_POST['plan_name'];
+    $plan_price= $_POST['plan_price'];
+    $status= $_POST['status'];
 
     include_once("../connect.php");
 
-    $result = mysqli_query($mysqli,"INSERT INTO user(name,email,username,password,level)
-    VALUES('$name','$email','$username','$password','$level')");
+    $result = mysqli_query($mysqli,"INSERT INTO subscription(id_user,plan_name,plan_price,status)
+    VALUES('$id_user','$plan_name','$plan_price','$status')");
 
-    header("location:adminuser.php");
+    header("location:adminsubs.php");
 }
 ?>
 
