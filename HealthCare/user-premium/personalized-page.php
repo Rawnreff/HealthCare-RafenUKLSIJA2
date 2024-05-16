@@ -68,9 +68,7 @@
                 <li>Complete 3 sets of as many reps as possible.</li>
               </ol>
             </div>
-          </div>
-
-          
+          </div>          
         </div>
   
         <div class="mentoring">
@@ -90,7 +88,6 @@
               </ol>
             </div>
           </div>
-  
         </div>
       </div>
     

@@ -42,8 +42,8 @@
                 <th>Id Article</th>
                 <th>Id Personalization</th>
                 <th>Title</th>
+                <th>Information</th>
                 <th>Content</th>
-                <th>Additional Information</th>
                 <th>Action</th>
                 <th>Action</th>
             </tr>
@@ -58,8 +58,8 @@
                 <td><?php echo $data['id_article']; ?></td>
                 <td><?php echo $data['id_personalization']; ?></td>
                 <td><?php echo $data['title']; ?></td>
+                <td><?php echo $data['information']; ?></td>
                 <td><?php echo $data['content']; ?></td>
-                <td><?php echo $data['additional_information']; ?></td>
                 <td><a href="adminarticledelete.php?id=<?php echo $data['id_article']; ?>" class="btn-hapus">Delete</a> </td>
                 <td><a href="adminarticleupdate.php?id=<?php echo $data['id_article']; ?>" class="btn-update">Update</a> </td>
             </tr>
