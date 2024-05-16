@@ -55,9 +55,6 @@
       <div class="wrap-mentoring">
         <div class="mentoring">
           <div class="card-mentoring">
-            <div class="card-mentoring-image">
-              <img src="image.exercises/pushups.webp" alt="" />
-            </div>
             <div class="card-mentoring-text">
               <h2>Push Ups</h2>
               <p><span>3 sets - 20x reps</span></p>
@@ -73,9 +70,6 @@
   
         <div class="mentoring">
           <div class="card-mentoring">
-            <div class="card-mentoring-image">
-              <img src="image.exercises/Single-leg-deadlifts.webp" alt="" />
-            </div>
             <div class="card-mentoring-text">
               <h2>Single Leg Deadlifts</h2>
               <p><span>3 sets - 12x reps/side</span></p>
