@@ -23,7 +23,7 @@
             <input type="text" name="name" required><br>
             
             <label for="email">E-mail:</label>
-            <input type="text" name="email" required><br>
+            <input type="email" name="email" required><br>
     
             <label for="username">Username:</label>
             <input type="text" name="username" required><br>

@@ -24,12 +24,16 @@
             
             <label for="plan_name">Plan Name:</label>
             <select name="plan_name" required>
-                <option value="premium plan">Premium</option>
                 <option value="free plan">Free Plan</option>
+                <option value="premium plan">Premium</option>
             </select><br>
 
             <label for="plan_price">Plan Price:</label>
-            <input type="text" name="plan_price" required><br>
+            <select requiredid id="plan_price" name="plan_price">
+                    <option value="0">Free</option>
+                    <option value="20000">Rp20.000,-</option>
+                    <option value="50000">Rp50.000,-</option>
+            </select>
     
             <label for="status">Status:</label>
             <select name="status" required>

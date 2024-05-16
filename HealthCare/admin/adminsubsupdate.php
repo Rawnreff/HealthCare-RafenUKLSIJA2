@@ -56,8 +56,8 @@ if(isset($_GET['id'])) {
 
             <label for="plan_name">Plan Name:</label><br>
                 <select requiredid id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>">
-                    <option value="premium plan">Premium</option>
                     <option value="free plan">Free Plan</option>
+                    <option value="premium plan">Premium</option>
                 </select>
 
             <label for="plan_price">Plan Price:</label><br>
