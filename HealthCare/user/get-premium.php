@@ -62,11 +62,9 @@ if (isset($_POST['Submit'])) {
         echo "Pengguna dengan email tersebut tidak ditemukan.";
     }
 
-    header("Location: index.php");
+    header("Location: ../user-premium/index.php");
 }
 ?>
-
-
 
 </body>
 </html>

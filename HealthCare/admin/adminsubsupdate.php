@@ -57,11 +57,12 @@ if(isset($_GET['id'])) {
             <label for="plan_name">Plan Name:</label><br>
                 <select requiredid id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>">
                     <option value="premium plan">Premium</option>
-                    <option value="free plan">Free</option>
+                    <option value="free plan">Free Plan</option>
                 </select>
 
             <label for="plan_price">Plan Price:</label><br>
             <select requiredid id="plan_price" name="plan_price" value="<?php echo $data['plan_price']; ?>">
+                    <option value="0">Free</option>
                     <option value="20000">Rp20.000,-</option>
                     <option value="50000">Rp50.000,-</option>
             </select>
