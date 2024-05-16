@@ -1,8 +1,3 @@
-<?php
-            include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -61,7 +56,7 @@
         <div class="mentoring">
           <div class="card-mentoring">
             <div class="card-mentoring-text">
-              <h2><?php echo $data['title']?></h2>
+              <h2></h2>
               <p><span></span></p>
               <hr>
               <ol>
@@ -74,14 +69,11 @@
         <div class="mentoring">
           <div class="card-mentoring">
             <div class="card-mentoring-text">
-              <h2>Single Leg Deadlifts</h2>
-              <p><span>3 sets - 12x reps/side</span></p>
+              <h2></h2>
+              <p><span></span></p>
               <hr>
               <ol>
-                <li>Begin standing with a dumbbell in your right hand, and your knees slightly bent.</li>
-                <li>Hinging at the hips, begin to kick your left leg straight back behind you, lowering the dumbbell down toward the ground.</li>
-                <li>When you reach a comfortable height with your left leg, slowly return to the starting position in a controlled motion, squeezing your right glute. Ensure that your pelvis stays square to the ground during the movement.</li>
-                <li>Repeat 10 to 12 reps before moving the weight to your left hand and repeating the same steps on the left leg. It's suggested to do 3 sets of 10-12 reps per side.</li>
+                <li></li>  
               </ol>
             </div>
           </div>
