@@ -23,7 +23,7 @@
 
 <?php
 if (isset($_POST['Submit'])) {
-    $id_user= $_POST['id_user'];
+    
     $plan_name= 'premium plan';
     $plan_price= $_POST['plan_price'];
     $status= 'active';

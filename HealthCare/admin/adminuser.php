@@ -23,7 +23,7 @@
         <i class='bx bx-menu' id="menu-icon"></i>
         <ul class="navbar">
             <li><a href="index.php">Home</a></li>
-            <li><a href="adminuser.php">User</a></li>
+            <li><a href="adminuser.php" class="btn-active">User</a></li>
             <li><a href="adminsubs.php">Subscription</a></li>
             <li><a href="adminperson.php">Personalization</a></li>
             <li><a href="adminarticle.php">Article</a></li>
