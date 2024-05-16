@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="user/style.css"/>
+    <link rel="stylesheet" href="style_index.css"/>
     <script src="user/script.js"></script>
   </head>
   <body>
@@ -28,6 +28,7 @@
         <a href="loginpage.php" class="btn">Daily Workouts</a>
         <a href="loginpage.php" class="btn">Healthy Foods</a>
         <a href="loginpage.php" class="btn">Sleep Programs</a>
+        <a href="loginpage.php" class="btn">Login</a>
         <div class="animation start-home1"></div>
       </div>
     </div>
