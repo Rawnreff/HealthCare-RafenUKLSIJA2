@@ -25,11 +25,11 @@
       </div>
       <div class="navigator">
         <a href="index.php" class="btn">Home</a>
-        <a href="daily-workouts.php" class="btn btn-active">Daily Workouts</a>
+        <a href="daily-workouts.php" class="btn">Daily Workouts</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
-        <a href="personalized-page.php" class="btn">Personalized Contents</a>
-        <div class="animation start-home2"></div>
+        <a href="personalized-page.php" class="btn btn-active">Personalized Contents</a>
+        <div class="animation start-home5"></div>
       </div>
     </div>
 
