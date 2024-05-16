@@ -28,6 +28,7 @@
         <a href="daily-workouts.php" class="btn btn-active">Daily Workouts</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
+        <a href="get-premium.php" class="btn">Get Premium?</a>
         <div class="animation start-home2"></div>
       </div>
     </div>

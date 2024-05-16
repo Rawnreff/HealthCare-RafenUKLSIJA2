@@ -57,7 +57,7 @@ a {
   display: flex;
 	position: relative;
 	background: transparent;
-	width: 580px;
+	width: 720px;
 	height: 70px;
 	font-size: 0;
   margin-left: 0;
@@ -116,6 +116,14 @@ a {
 .navigator .start-home4, a:nth-child(4):hover~.animation {
 	width: 180px;
 	left: 400px;
+}
+
+.navigator a:nth-child(5) {
+	width: 140px;
+}
+.navigator .start-home4, a:nth-child(5):hover~.animation {
+	width: 140px;
+	left: 580px;
 }
 
 .btn {
