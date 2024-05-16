@@ -12,7 +12,7 @@
         <form class="form" action="get-premium.php" method="post">
 
             <label for="email">Your Email:</label>
-            <input type="text" name="email" required><br>
+            <input type="email" name="email" required><br>
 
             <label for="plan_price">Price:</label>
             <select name="plan_price" required>
