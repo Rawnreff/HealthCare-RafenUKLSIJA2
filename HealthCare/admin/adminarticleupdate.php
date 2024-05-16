@@ -60,7 +60,7 @@ if(isset($_GET['id'])) {
             <label for="information">Information:</label><br>
             <input type="text" name="information" value="<?php echo $data['information']; ?>">
             
-            <label for="content">Status:</label><br>
+            <label for="content">Content:</label><br><br>
             <textarea style="height:200px; width:395px;" name="content"><?php echo htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                 
                 <br><br>
