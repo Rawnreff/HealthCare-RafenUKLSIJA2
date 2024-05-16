@@ -7,6 +7,7 @@
     list-style: none;
     text-decoration: none;
 }
+
 h1,
 h2 {
   font-family: "Signika", sans-serif;
@@ -19,6 +20,7 @@ h3,
 label {
   font-family: "Nunito", sans-serif;
 }
+
 :root{
     --main-color: #569099;
     --second-color: #f6d809;
@@ -27,9 +29,11 @@ label {
     --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
 
 }
+
 section{
     padding: 100px 200px;
 }
+
 header{
     position: fixed;
     width: 100%;
@@ -44,33 +48,46 @@ header{
     background-color: var(--main-color);
     opacity: 0.8;
 }
-header.shadow {
+
+header .shadow {
     background: var(--text-color);
     box-shadow: var(--box-shadow);
 }
+
 .logo h2 {
     color: white;
-  }
+}
   
 .logo span {
     color: #f6d809;
-  }
+}
+
 .navbar {
     display: flex;
 }
-.navbar a {
+
+.btn-nav:hover {
+  color: var(--second-color);
+}
+
+.btn-nav {
     padding: 8px 17px;
-    color: var(--bg-color);
+    text-decoration: none;
+    color: white;
     font-size: 1rem;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
 }
-.btn-active,
-.navbar a:hover {
+
+.btn-active {
+    padding: 8px 17px;
+    text-decoration: none;
     color: var(--second-color);
-    border-radius: 0.2rem;
-    transition: 0.2 all linear;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
+
 .user {
     width: 100%;
     min-height: 100vh;
@@ -79,6 +96,7 @@ header.shadow {
     background-size: cover;
     background-position: center;
 }
+
 .heading{
     color: rgb(0, 0, 0);
     font-size: 40px;
@@ -86,6 +104,7 @@ header.shadow {
     text-align: center;
     text-transform: uppercase;
 }
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -103,6 +122,7 @@ header.shadow {
     background-color: var(--main-color);
     color: #fff;
 }
+
 .btn{
     padding: 10px 40px;
     border-radius: 0.3rem;
@@ -110,6 +130,7 @@ header.shadow {
     color: var(--bg-color);
     font-weight: 500;
 }
+
 .btn:hover{
     background: #4cafa8;
 }
