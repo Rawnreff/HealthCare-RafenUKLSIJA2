@@ -25,6 +25,8 @@ if($cek > 0){
 
         $id_user = $data['id_user'];
 
+        $_SESSION['id_user'] = $id_user;
+
         $subscription_query = mysqli_query($mysqli, "SELECT plan_name FROM subscription WHERE id_user='$id_user'");
         if (mysqli_num_rows($subscription_query) > 0) {
             $subscription_data = mysqli_fetch_assoc($subscription_query);
