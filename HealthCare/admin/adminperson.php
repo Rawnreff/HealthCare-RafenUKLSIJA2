@@ -39,9 +39,9 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Id Personalization</th>
-                <th>Id Subscription</th>
                 <th>Id User</th>
+                <th>Id Subscription</th>
+                <th>Id Personalization</th>
                 <th>Preferences</th>
                 <th>Additional Preferences</th>
                 <th>Action</th>
@@ -55,9 +55,9 @@
             ?>
             <tr>
                 <td><?php echo $nomor++; ?></td>
-                <td><?php echo $data['id_personalization']; ?></td>
-                <td><?php echo $data['id_subscription']; ?></td>
                 <td><?php echo $data['id_user']; ?></td>
+                <td><?php echo $data['id_subscription']; ?></td>
+                <td><?php echo $data['id_personalization']; ?></td>
                 <td><?php echo $data['preferences']; ?></td>
                 <td><?php echo $data['additional_preferences']; ?></td>
                 <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>" class="btn-hapus">Delete</a> </td>

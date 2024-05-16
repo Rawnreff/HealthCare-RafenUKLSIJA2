@@ -18,13 +18,13 @@
     <div class="regist-container">
         <h1 class="title">Add Personalization</h1>
         <form class="form" action="adminpersonadd.php" method="post">
+            
+            <label for="id_user">Id User:</label>
+            <input type="text" name="id_user" required><br> 
 
             <label for="id_subscription">Id Subscription:</label>
             <input type="text" name="id_subscription" required><br>
-
-            <label for="id_user">Id User:</label>
-            <input type="text" name="id_user" required><br>            
-
+            
             <label for="preferences">Preferences:</label>
             <input type="text" name="preferences" required><br>
 
@@ -39,8 +39,8 @@
 
 <?php
 if (isset($_POST['Submit'])) {
-    $id_subscription= $_POST['id_subscription'];
     $id_user= $_POST['id_user'];
+    $id_subscription= $_POST['id_subscription'];
     $preferences= $_POST['preferences'];
     $additional_preferences= $_POST['additional_preferences'];
 

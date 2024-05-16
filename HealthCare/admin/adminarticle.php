@@ -39,6 +39,7 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
+                <th>Id User</th>
                 <th>Id Article</th>
                 <th>Id Personalization</th>
                 <th>Title</th>
@@ -55,6 +56,7 @@
             ?>
             <tr>
                 <td><?php echo $nomor++; ?></td>
+                <td><?php echo $data['id_user']; ?></td>
                 <td><?php echo $data['id_article']; ?></td>
                 <td><?php echo $data['id_personalization']; ?></td>
                 <td><?php echo $data['title']; ?></td>

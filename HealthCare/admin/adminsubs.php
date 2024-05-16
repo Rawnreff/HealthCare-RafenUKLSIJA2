@@ -39,8 +39,8 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Id Subscription</th>
                 <th>Id User</th>
+                <th>Id Subscription</th>
                 <th>Plan Name</th>
                 <th>Plan Price</th>
                 <th>Status</th>
@@ -55,8 +55,8 @@
             ?>
             <tr>
                 <td><?php echo $nomor++; ?></td>
-                <td><?php echo $data['id_subscription']; ?></td>
                 <td><?php echo $data['id_user']; ?></td>
+                <td><?php echo $data['id_subscription']; ?></td>
                 <td><?php echo $data['plan_name']; ?></td>
                 <td><?php echo $data['plan_price']; ?></td>
                 <td><?php echo $data['status']; ?></td>

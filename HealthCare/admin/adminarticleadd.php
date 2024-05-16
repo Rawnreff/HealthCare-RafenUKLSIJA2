@@ -19,6 +19,9 @@
         <h1 class="title">Add Article</h1>
         <form class="form" action="adminarticleadd.php" method="post">
 
+            <label for="id_user">Id User:</label>
+            <input type="text" name="id_user" required><br>
+
             <label for="id_personalization">Id Personalization:</label>
             <input type="text" name="id_personalization" required><br>
 
@@ -39,6 +42,7 @@
 
 <?php
 if (isset($_POST['Submit'])) {
+    $id_user= $_POST['id_user'];
     $id_personalization= $_POST['id_personalization'];
     $title= $_POST['title'];
     $information= $_POST['information'];
@@ -46,8 +50,8 @@ if (isset($_POST['Submit'])) {
 
     include_once("../connect.php");
 
-    $result = mysqli_query($mysqli,"INSERT INTO article(id_personalization,title,information,content)
-    VALUES('$id_personalization','$title','$information','$content')");
+    $result = mysqli_query($mysqli,"INSERT INTO article(id_personalization,title,information,content,id_user)
+    VALUES('$id_personalization','$title','$information','$content','$id_user')");
 
     header("location:adminarticle.php");
 }

@@ -1,3 +1,8 @@
+<?php
+            include '../connect.php';
+            $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,13 +61,11 @@
         <div class="mentoring">
           <div class="card-mentoring">
             <div class="card-mentoring-text">
-              <h2>Push Ups</h2>
-              <p><span>3 sets - 20x reps</span></p>
+              <h2><?php echo $data['title']?></h2>
+              <p><span></span></p>
               <hr>
               <ol>
-                <li>Start in a plank position. Your core should be tight, shoulders pulled down and back, and your neck neutral.</li>
-                <li>Bend your elbows and begin to lower your body down to the floor. When your chest grazes it, extend your elbows and return to the start. Focus on keeping your elbows close to your body during the movement.</li>
-                <li>Complete 3 sets of as many reps as possible.</li>
+                <li></li>
               </ol>
             </div>
           </div>          
