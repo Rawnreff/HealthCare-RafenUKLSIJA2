@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="style_index.css"/>
+    <link rel="stylesheet" href="style_page.css"/>
     <script src="script.js"></script>
   </head>
   <body>
@@ -25,10 +25,9 @@
       </div>
       <div class="navigator">
         <a href="index.php" class="btn btn-active">Home</a>
-        <a href="loginpage.php" class="btn">Daily Workouts</a>
-        <a href="loginpage.php" class="btn">Healthy Foods</a>
-        <a href="loginpage.php" class="btn">Sleep Programs</a>
-        <a href="loginpage.php" class="btn">Login</a>
+        <a href="daily-workouts.php" class="btn">Daily Workouts</a>
+        <a href="healthy-foods.php" class="btn">Healthy Foods</a>
+        <a href="sleep-programs.php" class="btn">Sleep Programs</a>
         <div class="animation start-home1"></div>
       </div>
     </div>
@@ -40,10 +39,10 @@
         <p class="description">
           Embarking on a path to well-being involves embracing daily exercise, a balanced diet, and consistent sleep. Regular physical activity invigorates the body and sharpens the mind, fostering enhanced productivity. Paired with a wholesome diet, it fuels the body, improves mood, sustains energy, and boosts the immune system. A consistent sleep routine becomes a cornerstone, facilitating natural recovery and cognitive function. The persuasive appeal lies in the promise of a vibrant, energized life, empowering individuals to meet daily demands with resilience and savor the richness of each moment through elevated well-being.
         </p>
-        <a href="loginpage.php">Login First!</a>
+        <a href="daily-workouts.php">Find out with Daily Workouts</a>
       </div>
       <div class="banner-image">
-        <img src="user/Image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
+        <img src="Image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
       </div>
     </div>
 
@@ -51,14 +50,14 @@
     <div class="superior">
       <div class="superior-text">
         <div class="card">
-          <img class="card-img" src="user/Image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
+          <img class="card-img" src="Image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
           <div class="card-text">
             <h3>Recommendations and Mentoring</h3>
             <p>There are various recommendations and guidelines for you to lead a healthy lifestyle.</p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img" src="user/Image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
+          <img class="card-img" src="Image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
           <div class="card-text">
             <h3>Tutorial Video</h3>
             <p>There are various tutorial videos to support your progress in adopting a healthy lifestyle.</p>
@@ -70,7 +69,7 @@
     <!-- motivation -->
     <div class="motivation">
       <div class="motivation-image">
-        <img src="user/Image/bodygoal.jpg" alt="" />
+        <img src="Image/bodygoal.jpg" alt="" />
       </div>
       <div class="motivation-text">
         <h2>
@@ -78,9 +77,9 @@
         </h2>
         <hr>
         <div class="image">
-          <img src="user/Image/workout.jpg" alt="" />
-          <img src="user/Image/healthy_breakfast.jpg" alt="" />
-          <img src="user/Image/sleep.jpg" alt="" />
+          <img src="Image/workout.jpg" alt="" />
+          <img src="Image/healthy_breakfast.jpg" alt="" />
+          <img src="Image/sleep.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -92,7 +91,7 @@
       </div>
       <div class="footer-bot">
         <div class="profile-navigation">
-          <a href="loginpage.php" class="profile-link">Profile</a>
+          <a href="profile.php" class="profile-link">Profile</a>
           <span>|</span>
           <a href="https://www.instagram.com/raffortless/" class="profile-link">Instagram</a>
         </div>
