@@ -13,18 +13,18 @@ if(isset($_GET['id'])) {
         $result = mysqli_query($mysqli, $query);
 
         if($result) {
-            header("Location: adminsubs.php");
+            header("Location: adminarticle.php");
             exit;
         } else {
             echo "Error: " . mysqli_error($mysqli);
         }
     }
 
-    $query = "SELECT * FROM subscription WHERE id_subscription='$id_subscription'";
+    $query = "SELECT * FROM article WHERE id_article='$id_article'";
     $result = mysqli_query($mysqli, $query);
     $data = mysqli_fetch_assoc($result);
 } else {
-    header("Location: adminsubs.php");
+    header("Location: adminarticle.php");
     exit;
 }
 ?>
@@ -54,24 +54,14 @@ if(isset($_GET['id'])) {
         <section class="form">
         <form method="POST" action="">
 
-            <label for="plan_name">Plan Name:</label><br>
-                <select requiredid id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>">
-                    <option value="free plan">Free Plan</option>
-                    <option value="premium plan">Premium</option>
-                </select>
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" value="<?php echo $data['title']; ?>">
 
-            <label for="plan_price">Plan Price:</label><br>
-            <select requiredid id="plan_price" name="plan_price" value="<?php echo $data['plan_price']; ?>">
-                    <option value="0">Free</option>
-                    <option value="20000">Rp20.000,-</option>
-                    <option value="50000">Rp50.000,-</option>
-            </select>
+            <label for="information">Information:</label><br>
+            <input type="text" name="information" value="<?php echo $data['information']; ?>">
             
-            <label for="status">Status:</label><br>
-            <select requiredid id="status" name="status" value="<?php echo $data['status']; ?>">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-            </select>
+            <label for="content">Status:</label><br>
+            <textarea style="height:200px; width:395px;" name="content"><?php echo htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                 
                 <br><br>
                 
