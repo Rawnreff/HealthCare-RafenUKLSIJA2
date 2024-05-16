@@ -38,11 +38,28 @@ if (isset($_POST['Submit'])) {
     $password= $_POST['password'];
     $level= 'user';
     echo($password);
+    $plan_name= 'free plan';
+    $plan_price= '0';
+    $status= 'active';
 
     include_once("connect.php");
 
     $result = mysqli_query($mysqli,"INSERT INTO user(name,email,username,password,level)
     VALUES('$name','$email','$username','$password','$level')");
+
+if ($result) {
+    $id_user = mysqli_insert_id($mysqli);
+
+    $subscription_result = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status) VALUES('$id_user', '$plan_name', '$plan_price', '$status')");
+
+    if ($subscription_result) {
+        echo "Data berhasil ditambahkan ke tabel subscription";
+    } else {
+        echo "Gagal menambahkan data ke tabel subscription: " . mysqli_error($mysqli);
+    }
+} else {
+    echo "Gagal menambahkan data ke tabel user: " . mysqli_error($mysqli);
+}
 
     header("location:loginpage.php");
 }
