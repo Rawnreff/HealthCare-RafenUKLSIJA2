@@ -28,7 +28,7 @@
         <a href="loginpage.php" class="btn">Daily Workouts</a>
         <a href="loginpage.php" class="btn">Healthy Foods</a>
         <a href="loginpage.php" class="btn">Sleep Programs</a>
-        <a href="loginpage.php" class="btn">Login</a>
+        <a href="loginpage.php" class="btn">Login?</a>
         <div class="animation start-home1"></div>
       </div>
     </div>
