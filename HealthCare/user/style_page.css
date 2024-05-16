@@ -121,7 +121,7 @@ a {
 .navigator a:nth-child(5) {
 	width: 140px;
 }
-.navigator, a:nth-child(5):hover~.animation {
+.navigator .start-home5, a:nth-child(5):hover~.animation {
 	width: 140px;
 	left: 580px;
 }
