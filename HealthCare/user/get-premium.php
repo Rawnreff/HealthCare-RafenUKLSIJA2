@@ -9,12 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Registration</title>
+    <title>Get Premium?</title>
     <link rel="stylesheet" href="../style_reg.css">
 </head>
 <body>
     <div class="regist-container">
-        <h1 class="title">Premium Registration</h1>
+        <h1 class="title"><?php echo $_SESSION['username'];?>'s Premium Registration</h1>
         <form class="form" action="get-premium.php" method="post">
 
             <label for="email">Your Email:</label>

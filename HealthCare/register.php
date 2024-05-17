@@ -17,7 +17,7 @@
             <label for="email">E-mail:</label>
             <input type="email" name="email" required><br>
     
-            <label for="username">Username:</label>
+            <label for="username">Username (Maximum 10 Characters):</label>
             <input type="text" name="username" required><br>
     
             <label for="password">Password:</label>
