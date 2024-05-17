@@ -69,7 +69,7 @@
         </table>
         <br>
         <br>
-    <a href="../index.php" class="btn">Log Out</a>
+    <a href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 </html>
