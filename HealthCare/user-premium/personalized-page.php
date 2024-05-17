@@ -68,7 +68,7 @@
             <table border="0" class="table">
               <?php
               include '../connect.php';
-              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
+              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article WHERE id_user=$mencari") or die(mysqli_error($mysqli));
               while($data = mysqli_fetch_array($query_mysql)) { 
               ?>
               <tr>
@@ -95,7 +95,7 @@
             <table border="0" class="table">
               <?php
               include '../connect.php';
-              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
+              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article WHERE id_user=$mencari") or die(mysqli_error($mysqli));
               while($data = mysqli_fetch_array($query_mysql)) { 
               ?>
               <tr>
