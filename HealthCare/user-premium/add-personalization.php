@@ -23,13 +23,21 @@
 <body>
     <div class="regist-container">
         <h1 class="title">Add <?php echo $_SESSION['username']?>'s Personalization</h1>
+        <?php
+        include '../connect.php';
+        $query_mysql = mysqli_query($mysqli, "SELECT * FROM subscription WHERE id_user=$mencari") or die(mysqli_error($mysqli));
+        ?>
         <form class="form" action="add-personalization.php" method="post">
             
             <label for="id_user">Id User:</label>
-            <input type="text" name="id_user" required><br> 
+            <select id="id_user" name="id_user" required>
+                    <option value="<?php $_SESSION['id_user']?>"><?php echo $_SESSION['id_user']?></option>
+            </select>
 
             <label for="id_subscription">Id Subscription:</label>
-            <input type="text" name="id_subscription" required><br>
+            <select id="id_subscription" name="id_subscription" required>
+                    <option value="<?php $_SESSION['id_subscription']?>"><?php echo $_SESSION['id_subscription']?></option>
+            </select>
             
             <label for="preferences">Preferences:</label>
             <input type="text" name="preferences" required><br>
