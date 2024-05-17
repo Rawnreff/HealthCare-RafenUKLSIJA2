@@ -58,14 +58,15 @@ if(isset($_GET['id'])) {
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $data['name']; ?>"><br>
 
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="<?php echo $data['email']; ?>"><br>
+
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" value="<?php echo $data['username']; ?>"><br>
-
+        
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" value="<?php echo $data['password']; ?>"><br>
+        <input type="password" id="password" name="password" value="<?php echo $data['password']; ?>"><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="<?php echo $data['email']; ?>"><br><br>
         <input type="submit" name="update" value="Update" class="button">
     </form>
         </section>
