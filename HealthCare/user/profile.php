@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Dev's Profile</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
       rel="stylesheet"
@@ -25,7 +25,7 @@
       </div>
       <div class="navigator">
         <a href="index.php" class="btn">Home</a>
-        <a href="daily-exercises.php" class="btn">Daily Exercises</a>
+        <a href="daily-workouts.php" class="btn">Daily Exercises</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
         <a href="get-premium.php" class="btn">Get Premium?</a>

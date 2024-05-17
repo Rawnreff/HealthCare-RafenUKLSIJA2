@@ -25,7 +25,7 @@
       </div>
       <div class="navigator">
         <a href="index.php" class="btn">Home</a>
-        <a href="daily-exercises.php" class="btn">Daily Exercises</a>
+        <a href="daily-workouts.php" class="btn">Daily Exercises</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
         <a href="personalized-page.php" class="btn">Personalized Contents</a>
