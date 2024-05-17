@@ -64,7 +64,7 @@ $mencari = $_SESSION['id_user'];
             $articles[] = $data;
         }
 
-        $total_tables = 4;
+        $total_tables = count($articles);
         $current_table = 0;
         $articles_per_table = ceil(count($articles) / $total_tables);
         ?>
