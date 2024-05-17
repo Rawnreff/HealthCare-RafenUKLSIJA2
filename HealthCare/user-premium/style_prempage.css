@@ -205,6 +205,12 @@ a {
   filter: drop-shadow(4px 5px 6px rgba(0, 0, 0, 0.2));
 }
 
+.add-person {
+  background-color: #569099;
+  width: 30px;
+  height: 10px;
+}
+
 /* home page */
 .superior {
   width: 100%;

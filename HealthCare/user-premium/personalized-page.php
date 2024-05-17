@@ -38,7 +38,7 @@
         <div class="text">
           <h1><span>Personalized</span> Contents</h1>
           <p class="description">
-          Welcome to our Premium Plan!🎉 Thank you for joining and trusting us to meet your needs. With the Premium Plan, you will enjoy exclusive features, priority support, and many other benefits designed to enhance your experience. Now you can freely use the Content Personalization feature! We are thrilled to accompany you on this journey and are ready to assist you whenever needed. If you have any questions or need help, please don't hesitate to contact our support team. Enjoy our premium services!🚀✨ Warm regards, HealthCare
+            Welcome to our Premium Plan!🎉 Thank you for joining and trusting us to meet your needs. With the Premium Plan, you will enjoy exclusive features, priority support, and many other benefits designed to enhance your experience. Now you can freely use the Content Personalization feature! We are thrilled to accompany you on this journey and are ready to assist you whenever needed. If you have any questions or need help, please don't hesitate to contact our support team. Enjoy our premium services!🚀✨ Warm regards, HealthCare
           </p>
         </div>
         <div class="banner-image">
@@ -51,17 +51,32 @@
       <div class="sub-title">
         <h2>Your personalized contents</h2>
         <hr>
+          <a href="add-personalization.php" class="add-person">Add Personalization</a>
       </div>
       <div class="wrap-mentoring">
         <div class="mentoring">
           <div class="card-mentoring">
             <div class="card-mentoring-text">
-              <h2></h2>
-              <p><span></span></p>
-              <hr>
-              <ol>
-                <li></li>
-              </ol>
+            <table border="0" class="table">
+              <?php
+              include '../connect.php';
+              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
+              while($data = mysqli_fetch_array($query_mysql)) { 
+              ?>
+              <tr>
+                <td><h2><?php echo $data['title']; ?></h2></td>
+              </tr>
+              <tr>
+                <td><p><span><?php echo $data['information']; ?></span></p></td>
+              </tr>
+              <tr>
+                <td><hr></td>
+              </tr>
+              <tr>
+                <td><ol><?php echo $data['content']; ?></ol></td>
+              </tr>
+              <?php } ?>
+            </table>
             </div>
           </div>          
         </div>
@@ -69,12 +84,26 @@
         <div class="mentoring">
           <div class="card-mentoring">
             <div class="card-mentoring-text">
-              <h2></h2>
-              <p><span></span></p>
-              <hr>
-              <ol>
-                <li></li>  
-              </ol>
+            <table border="0" class="table">
+              <?php
+              include '../connect.php';
+              $query_mysql = mysqli_query($mysqli, "SELECT * FROM article") or die(mysqli_error($mysqli));
+              while($data = mysqli_fetch_array($query_mysql)) { 
+              ?>
+              <tr>
+                <td><h2><?php echo $data['title']; ?></h2></td>
+              </tr>
+              <tr>
+                <td><p><span><?php echo $data['information']; ?></span></p></td>
+              </tr>
+              <tr>
+                <td><hr></td>
+              </tr>
+              <tr>
+                <td><ol><?php echo $data['content']; ?></ol></td>
+              </tr>
+              <?php } ?>
+            </table>
             </div>
           </div>
         </div>
