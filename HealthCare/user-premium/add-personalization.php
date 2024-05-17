@@ -16,8 +16,8 @@
 </head>
 <body>
     <div class="regist-container">
-        <h1 class="title">Add Personalization</h1>
-        <form class="form" action="adminpersonadd.php" method="post">
+        <h1 class="title">Add Your Personalization</h1>
+        <form class="form" action="add-personalization.php" method="post">
             
             <label for="id_user">Id User:</label>
             <input type="text" name="id_user" required><br> 
@@ -49,7 +49,7 @@ if (isset($_POST['Submit'])) {
     $result = mysqli_query($mysqli,"INSERT INTO personalization(id_subscription,id_user,preferences,additional_preferences)
     VALUES('$id_subscription','$id_user','$preferences','$additional_preferences')");
 
-    header("location:adminperson.php");
+    header("location:personalized-page.php");
 }
 ?>
 

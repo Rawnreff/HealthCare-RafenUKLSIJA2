@@ -51,7 +51,9 @@
       <div class="sub-title">
         <h2>Your personalized contents</h2>
         <hr>
+        <div class="add-person">
           <a href="add-personalization.php" class="add-person">Add Personalization</a>
+        </div>
       </div>
       <div class="wrap-mentoring">
         <div class="mentoring">

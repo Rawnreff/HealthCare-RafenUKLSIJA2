@@ -206,9 +206,29 @@ a {
 }
 
 .add-person {
+  display: flex;
+  padding: 0;
+  margin-top: 15px;
   background-color: #569099;
-  width: 30px;
-  height: 10px;
+  width: 200px;
+  height: 30px;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.add-person a {
+  text-decoration: none;
+  color: white;
+}
+
+.add-person:hover {
+  background-color: #6c959c;
+}
+
+.add-person a:hover {
+  color: #f6d809;
 }
 
 /* home page */
