@@ -34,7 +34,7 @@
         <a href="daily-workouts.php" class="btn">Daily Workouts</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
-        <a href="personalized-page.php" class="btn"><?php echo $_SESSION['username'];?>'s Contents</a>
+        <a href="personalized-page.php" class="btn">Personalized Contents</a>
         <div class="animation start-home1"></div>
       </div>
     </div>

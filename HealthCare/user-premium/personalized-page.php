@@ -34,7 +34,7 @@
         <a href="daily-workouts.php" class="btn">Daily Workouts</a>
         <a href="healthy-foods.php" class="btn">Healthy Foods</a>
         <a href="sleep-programs.php" class="btn">Sleep Programs</a>
-        <a href="personalized-page.php" class="btn btn-active"><?php echo $_SESSION['username'];?>'s Contents</a>
+        <a href="personalized-page.php" class="btn btn-active">Personalized Contents</a>
         <div class="animation start-home5"></div>
       </div>
     </div>
@@ -44,7 +44,7 @@
         <div class="text">
           <h1><span>Personalized</span> Contents</h1>
           <p class="description">
-            Welcome to our Premium Plan!🎉 Thank you for joining and trusting us to meet your needs. With the Premium Plan, you will enjoy exclusive features, priority support, and many other benefits designed to enhance your experience. Now you can freely use the Content Personalization feature! We are thrilled to accompany you on this journey and are ready to assist you whenever needed. If you have any questions or need help, please don't hesitate to contact our support team. Enjoy our premium services!🚀✨ Warm regards, HealthCare
+            Hi <?php echo $_SESSION['username'];?>! Welcome to our Premium Plan!🎉 Thank you for joining and trusting us to meet your needs. With the Premium Plan, you will enjoy exclusive features, priority support, and many other benefits designed to enhance your experience. Now you can freely use the Content Personalization feature! We are thrilled to accompany you on this journey and are ready to assist you whenever needed. If you have any questions or need help, please don't hesitate to contact our support team. Enjoy our premium services!🚀✨
           </p>
         </div>
         <div class="banner-image">
@@ -55,7 +55,7 @@
       
       <!-- content -->
       <div class="sub-title">
-        <h2>Your personalized contents</h2>
+        <h2><?php echo $_SESSION['username'];?>'s personalized contents</h2>
         <hr>
         <div class="add-person">
           <a href="add-personalization.php" class="add-person">Add Personalization</a>
