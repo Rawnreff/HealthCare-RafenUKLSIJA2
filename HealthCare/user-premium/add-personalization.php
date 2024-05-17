@@ -1,3 +1,9 @@
+<?php
+ session_start();
+
+ $mencari=$_SESSION['id_user'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +22,7 @@
 </head>
 <body>
     <div class="regist-container">
-        <h1 class="title">Add Your Personalization</h1>
+        <h1 class="title">Add <?php echo $_SESSION['username']?> Personalization</h1>
         <form class="form" action="add-personalization.php" method="post">
             
             <label for="id_user">Id User:</label>
