@@ -33,9 +33,7 @@
     <h1 class="heading">Article Data</h1>
     <br>
     <br>
-        <div class="btn-add">
-            <a href="adminarticleadd.php">Add Article</a>
-        </div>
+        <a href="adminarticleadd.php" class="btn">Add Article</a>
         <br>
         <br>
         <table border="1" class="table">
