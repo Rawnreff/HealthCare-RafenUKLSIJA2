@@ -65,10 +65,11 @@ $mencari = $_SESSION['id_user'];
         }
 
         $total_tables = count($articles);
-        if ($total_tables % 2 != 0) {
+        if ($total_tables == 0) {
+            $total_tables += 2;
+        } elseif ($total_tables % 2 != 0) {
             $total_tables++;
         }
-
 
         $current_table = 0;
         $articles_per_table = ceil(count($articles) / $total_tables);
