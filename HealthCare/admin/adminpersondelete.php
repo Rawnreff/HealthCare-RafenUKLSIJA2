@@ -1,7 +1,6 @@
 <?php
 include '../connect.php';
 
-
 if(isset($_GET['id'])) {
     $id_personalization = $_GET['id'];
 
