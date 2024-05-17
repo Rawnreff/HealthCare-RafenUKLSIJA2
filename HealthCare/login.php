@@ -25,19 +25,23 @@ if ($cek > 0) {
         $id_user = $data['id_user'];
         $_SESSION['id_user'] = $id_user;
 
-        // Mengambil id_subscription dari tabel subscription
-        $subscription_query = mysqli_query($mysqli, "SELECT id_subscription, plan_name FROM subscription WHERE id_user='$id_user'");
+        $subscription_query = mysqli_query($mysqli, "SELECT id_subscription, plan_name, status FROM subscription WHERE id_user='$id_user'");
         if (mysqli_num_rows($subscription_query) > 0) {
             $subscription_data = mysqli_fetch_assoc($subscription_query);
             $id_subscription = $subscription_data['id_subscription'];
             $plan_name = $subscription_data['plan_name'];
+            $status = $subscription_data['status'];
 
-            // Menyimpan id_subscription dalam sesi
             $_SESSION['id_subscription'] = $id_subscription;
 
-            // Mengarahkan berdasarkan plan_name
             if ($plan_name == 'premium plan') {
-                header("Location: user-premium/index.php");
+                if ($status == 'active') {
+                    header("Location: user-premium/index.php");
+                } else if ($status == 'inactive') {
+                    header("Location: user/index.php");
+                } else {
+                    header("Location: loginpage.php?pesan=invalid_status");
+                }
             } else if ($plan_name == 'free plan') {
                 header("Location: user/index.php");
             } else {
