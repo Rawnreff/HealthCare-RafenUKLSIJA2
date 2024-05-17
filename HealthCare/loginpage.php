@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="login-container">
         <h1 class="title">Log in</h1>
@@ -23,14 +25,16 @@
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
+
             <a href="login.php">
                 <button class="button">Login</button>
             </a>
         </form>
         <div class="regist">
-            <a href="register.php">Register</a> <div class="gap"></div> <a href="#">Forgot Password</a>
+            <a href="register.php">Register</a>
+            <div class="gap"></div> <a href="#">Forgot Password</a>
         </div>
     </div>
 </body>
+
 </html>

@@ -6,7 +6,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Signika", sans-serif;
+    font-family: "Signika", sans-serif;
 }
 
 a,
@@ -14,7 +14,7 @@ p,
 li,
 h3,
 label {
-  font-family: "Nunito", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .regist-container {
@@ -40,7 +40,7 @@ label {
     margin-bottom: 0px;
 }
 
-input{
+input {
     width: calc(100% - 20px);
     padding: 8px;
     margin: 10px 0;

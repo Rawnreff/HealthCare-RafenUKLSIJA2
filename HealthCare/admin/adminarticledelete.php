@@ -1,13 +1,13 @@
 <?php
 include '../connect.php';
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id_article = $_GET['id'];
 
-      $query = "DELETE FROM article WHERE id_article='$id_article'";
+    $query = "DELETE FROM article WHERE id_article='$id_article'";
     $result = mysqli_query($mysqli, $query);
 
-    if($result) {
+    if ($result) {
         header("Location: adminarticle.php");
         exit;
     } else {

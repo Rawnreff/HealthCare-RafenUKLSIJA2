@@ -28,7 +28,8 @@ label {
     margin-bottom: 0px;
 }
 
-input, select {
+input,
+select {
     width: calc(100% - 20px);
     padding: 8px;
     margin: 10px 0;

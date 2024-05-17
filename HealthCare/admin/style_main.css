@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,7 @@
 
 h1,
 h2 {
-  font-family: "Signika", sans-serif;
+    font-family: "Signika", sans-serif;
 }
 
 a,
@@ -18,10 +18,10 @@ p,
 li,
 h3,
 label {
-  font-family: "Nunito", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
-:root{
+:root {
     --main-color: #569099;
     --second-color: #f6d809;
     --text-color: #1b1b1b;
@@ -30,11 +30,11 @@ label {
 
 }
 
-section{
+section {
     padding: 100px 200px;
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -57,7 +57,7 @@ header .shadow {
 .logo h2 {
     color: white;
 }
-  
+
 .logo span {
     color: #f6d809;
 }
@@ -67,7 +67,7 @@ header .shadow {
 }
 
 .btn-nav:hover {
-  color: var(--second-color);
+    color: var(--second-color);
 }
 
 .btn-nav {
@@ -97,7 +97,7 @@ header .shadow {
     background-position: center;
 }
 
-.heading{
+.heading {
     color: rgb(0, 0, 0);
     font-size: 40px;
     font-weight: 600;
@@ -108,12 +108,13 @@ header .shadow {
 .table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--bg-color); 
+    background: var(--bg-color);
     background-size: cover;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -123,7 +124,7 @@ header .shadow {
     color: #fff;
 }
 
-.btn{
+.btn {
     padding: 10px 40px;
     border-radius: 0.3rem;
     background: var(--main-color);
@@ -131,6 +132,6 @@ header .shadow {
     font-weight: 500;
 }
 
-.btn:hover{
+.btn:hover {
     background: #4cafa8;
 }
