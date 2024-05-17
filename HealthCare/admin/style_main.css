@@ -67,7 +67,7 @@ header .shadow {
 }
 
 .btn-nav:hover {
-  color: #f4df57;
+  color: var(--second-color);
 }
 
 .btn-nav {
