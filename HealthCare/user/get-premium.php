@@ -34,18 +34,16 @@
 
 <?php
 if (isset($_POST['Submit'])) {
-    $id_user = $_POST['id_user']; // Mengambil id_user dari select
+    $id_user = $_POST['id_user'];
     $plan_name = 'premium plan';
     $plan_price = $_POST['plan_price'];
     $status = 'active';
 
     include_once("../connect.php");
 
-    // Mengecek apakah pengguna sudah memiliki langganan
     $check_subscription = mysqli_query($mysqli, "SELECT * FROM subscription WHERE id_user='$id_user'");
 
     if (mysqli_num_rows($check_subscription) > 0) {
-        // Jika sudah ada langganan, perbarui langganan
         $update_subscription = mysqli_query($mysqli, "UPDATE subscription SET plan_name='$plan_name', plan_price='$plan_price', status='$status' WHERE id_user='$id_user'");
 
         if ($update_subscription) {
@@ -54,7 +52,6 @@ if (isset($_POST['Submit'])) {
             echo "Gagal memperbarui data subscription: " . mysqli_error($mysqli);
         }
     } else {
-        // Jika belum ada langganan, tambahkan langganan baru
         $insert_subscription = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status) VALUES('$id_user', '$plan_name', '$plan_price', '$status')");
 
         if ($insert_subscription) {
@@ -64,7 +61,6 @@ if (isset($_POST['Submit'])) {
         }
     }
 
-    // Mengarahkan pengguna ke halaman premium
     header("Location: ../user-premium/index.php");
 }
 ?>

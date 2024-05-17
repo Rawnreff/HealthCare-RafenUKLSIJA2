@@ -92,11 +92,3 @@ select {
     text-decoration: underline;
     color: var(--main-color);
 }
-
-@media only screen and (max-width: 560px) {
-    .container {
-        margin: 50px auto;
-        max-width: 60%; /* Mengatur lebar maksimum kontainer */
-        font-size: 12px;
-    }
-}
