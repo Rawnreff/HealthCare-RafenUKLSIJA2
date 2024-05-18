@@ -29,7 +29,7 @@
     </header>
     <section class="user">
         <br><br><br><br><br><br><br><br><br><br>
-        <h1 class="heading">HealthCare Admin Page</h1>
+        <h1 class="heading">HealthCare <br> Administrator Page</h1>
     </section>
 </body>
 
