@@ -19,10 +19,8 @@ $mencari = $_SESSION['id_user'];
         <h1 class="title"><?php echo $_SESSION['username']; ?>'s Premium Registration</h1>
         <form class="form" action="get-premium.php" method="post">
 
-            <label for="id_user">Id User:</label>
-            <select id="id_user" name="id_user" required>
-                <option value="<?php echo $_SESSION['id_user']; ?>"><?php echo $_SESSION['id_user']; ?></option>
-            </select><br>
+            <label for="id_user">Email:</label>
+            <input type="email" name="id_user" required><br>
 
             <label for="plan_price">Price:</label>
             <select name="plan_price" required>
@@ -36,7 +34,7 @@ $mencari = $_SESSION['id_user'];
 
     <?php
     if (isset($_POST['Submit'])) {
-        $id_user = $_POST['id_user'];
+        $id_user = $_SESSION['id_user'];
         $plan_name = 'premium plan';
         $plan_price = $_POST['plan_price'];
         $status = 'active';
