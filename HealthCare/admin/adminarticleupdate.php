@@ -11,7 +11,6 @@ if (isset($_GET['id'])) {
 
         $image = $_POST['image'];
         if ($_FILES["image"]["error"] == 4) {
-            // No new image uploaded, use existing image
             $newImageName = $image;
         } else {
             $fileName = $_FILES["image"]["name"];
