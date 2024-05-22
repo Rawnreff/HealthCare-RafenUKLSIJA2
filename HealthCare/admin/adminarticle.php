@@ -40,6 +40,7 @@
                 <th>Id User</th>
                 <th>Id Article</th>
                 <th>Id Personalization</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Information</th>
                 <th>Content</th>
@@ -57,6 +58,7 @@
                     <td><?php echo $data['id_user']; ?></td>
                     <td><?php echo $data['id_article']; ?></td>
                     <td><?php echo $data['id_personalization']; ?></td>
+                    <td><img src="img/<?php echo $data["image"]; ?>" width="200" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>
                     <td><?php echo $data['content']; ?></td>

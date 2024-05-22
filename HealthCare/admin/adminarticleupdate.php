@@ -9,7 +9,31 @@ if (isset($_GET['id'])) {
         $information = $_POST['information'];
         $content = $_POST['content'];
 
-        $query = "UPDATE article SET title='$title', information='$information', content='$content' WHERE id_article='$id_article'";
+        $image = $_POST['image'];
+        if ($_FILES["image"]["error"] == 4) {
+            // No new image uploaded, use existing image
+            $newImageName = $image;
+        } else {
+            $fileName = $_FILES["image"]["name"];
+            $fileSize = $_FILES["image"]["size"];
+            $tmpName = $_FILES["image"]["tmp_name"];
+
+            $validImageExtension = ['jpg', 'jpeg', 'png'];
+            $imageExtension = explode('.', $fileName);
+            $imageExtension = strtolower(end($imageExtension));
+            if (!in_array($imageExtension, $validImageExtension)) {
+                echo "<script> alert('Invalid Image Extension'); </script>";
+            } else if ($fileSize > 1000000) {
+                echo "<script> alert('Image Size Is Too Large'); </script>";
+            } else {
+                $newImageName = uniqid();
+                $newImageName .= '.' . $imageExtension;
+
+                move_uploaded_file($tmpName, 'img/' . $newImageName);
+            }
+        }
+
+        $query = "UPDATE article SET image='$newImageName', title='$title', information='$information', content='$content' WHERE id_article='$id_article'";
         $result = mysqli_query($mysqli, $query);
 
         if ($result) {
@@ -50,7 +74,10 @@ if (isset($_GET['id'])) {
             <h1 class="title">Update Article</h1>
         </header>
         <section class="form">
-            <form method="POST" action="">
+            <form method="POST" action="" enctype="multipart/form-data">
+
+                <label for="image">Image:</label><br>
+                <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png"><br><br>
 
                 <label for="title">Title:</label><br>
                 <input type="text" name="title" value="<?php echo $data['title']; ?>">

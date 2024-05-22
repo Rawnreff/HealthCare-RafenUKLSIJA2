@@ -98,6 +98,11 @@ $mencari = $_SESSION['id_user'];
                 ?>
                 <tr>
                   <td>
+                  <img src="../admin/img/<?php echo $data["image"]; ?>" width="200" title="<?php echo $data['image']; ?>">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <h2><?php echo $data['title']; ?></h2>
                   </td>
                 </tr>
