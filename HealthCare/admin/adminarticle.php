@@ -58,7 +58,7 @@
                     <td><?php echo $data['id_user']; ?></td>
                     <td><?php echo $data['id_article']; ?></td>
                     <td><?php echo $data['id_personalization']; ?></td>
-                    <td><img src="img/<?php echo $data["image"]; ?>" width="100" title="<?php echo $data['image']; ?>"></td>
+                    <td><img src="img/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>
                     <td><?php echo $data['content']; ?></td>
