@@ -27,17 +27,6 @@ $mencari = $_SESSION['id_user'];
         ?>
         <form class="form" action="add-personalization.php" method="post">
 
-            <label for="id_user">Id User:</label>
-            <select id="id_user" name="id_user" required>
-                <option value="<?php $_SESSION['id_user'] ?>"><?php echo $_SESSION['id_user'] ?></option>
-            </select>
-
-            <label for="id_subscription">Id Subscription:</label>
-            <select id="id_subscription" name="id_subscription" required>
-                <option value="<?php $_SESSION['id_subscription'] ?>"><?php echo $_SESSION['id_subscription'] ?>
-                </option>
-            </select>
-
             <label for="preferences">Preferences:</label>
             <input type="text" name="preferences" required><br>
 
@@ -52,8 +41,8 @@ $mencari = $_SESSION['id_user'];
 
     <?php
     if (isset($_POST['Submit'])) {
-        $id_user = $_POST['id_user'];
-        $id_subscription = $_POST['id_subscription'];
+        $id_user = $_SESSION['id_user'];
+        $id_subscription = $_SESSION['id_subscription'];
         $preferences = $_POST['preferences'];
         $additional_preferences = $_POST['additional_preferences'];
 
