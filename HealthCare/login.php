@@ -14,12 +14,12 @@ if ($cek > 0) {
 
     if ($data['level'] == "admin") {
         $_SESSION['email'] = $email;
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $data['username'];
         $_SESSION['level'] = "admin";
         header("Location: admin/index.php");
     } else if ($data['level'] == "user") {
         $_SESSION['email'] = $email;
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $data['username'];
         $_SESSION['level'] = "user";
 
         $id_user = $data['id_user'];
