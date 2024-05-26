@@ -73,6 +73,10 @@ mysqli_close($mysqli);
       <h1><?php echo $_SESSION['username']; ?>'s <span>Profile</span></h1>
       <table class="profile-table">
         <tr>
+          <th>Name</th>
+          <td><?php echo $userData['name']; ?></td>
+        </tr>
+        <tr>
           <th>Username</th>
           <td><?php echo $userData['username']; ?></td>
         </tr>
@@ -89,6 +93,7 @@ mysqli_close($mysqli);
           <td><?php echo $subsData['plan_name']; ?></td>
         </tr>
       </table>
+      <a href="edit-profile.php?id=<?php echo $userData['id_user']; ?>">Edit Profile</a>
     </div>
   </div>
 
@@ -99,7 +104,7 @@ mysqli_close($mysqli);
     </div>
     <div class="footer-bot">
       <div class="profile-navigation">
-        <a href="index.php" class="profile-link">Home</a>
+        <a href="../loginpage.php" class="profile-link">Log Out</a>
         <span>|</span>
         <a href="https://www.instagram.com/raffortless/" class="profile-link">Instagram</a>
       </div>
