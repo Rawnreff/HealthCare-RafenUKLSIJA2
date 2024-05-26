@@ -445,3 +445,27 @@ a:nth-child(5):hover~.animation {
   color: #f6d809;
   filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.1));
 }
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.profile-table th, 
+.profile-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-table th {
+  background-color: #569099;
+  font-weight: bold;
+  color: white;
+  width: 95px;
+}
+
+.profile-table td {
+  background-color: #f2f2f2;
+}

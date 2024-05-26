@@ -1,7 +1,37 @@
 <?php
 session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 
-$mencari = $_SESSION['id_user'];
+include '../connect.php';
+$username = $_SESSION['username'];
+
+$query = "SELECT * FROM user WHERE username = '$username'";
+$result = mysqli_query($mysqli, $query);
+
+if (!$result) {
+    die("Query Error: " . mysqli_error($mysqli));
+}
+
+$userData = mysqli_fetch_assoc($result);
+
+mysqli_close($mysqli);
+
+include '../connect.php';
+$id_user = $_SESSION['id_user'];
+
+$query = "SELECT * FROM subscription WHERE id_user = '$id_user'";
+$result = mysqli_query($mysqli, $query);
+
+if (!$result) {
+    die("Query Error: " . mysqli_error($mysqli));
+}
+
+$subsData = mysqli_fetch_assoc($result);
+
+mysqli_close($mysqli);
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +41,7 @@ $mencari = $_SESSION['id_user'];
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Page</title>
+  <title><?php echo $_SESSION['username']; ?>'s Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet"
@@ -40,19 +70,25 @@ $mencari = $_SESSION['id_user'];
   <!-- banner -->
   <div class="banner">
     <div class="text">
-      <h1>Web Developer <span>Profile</span></h1>
-      <p class="description">
-        Hello, I'm Rafen Sidiq Anggara, a 15-year-old student currently attending SMK Telkom Sidoarjo. I have a passion
-        for expanding my knowledge and broadening my horizons through the exploration of various articles. Whether it's
-        delving into the realms of science, technology, or any other subject that piques my interest, you'll often find
-        me immersed in the world of written knowledge. As a student, I am dedicated to my studies, always seeking to
-        learn and grow. Outside the academic sphere, I enjoy the intellectual stimulation that comes from reading and
-        discussing thought-provoking articles. My curiosity drives me to continually seek out new information and
-        perspectives, making the pursuit of knowledge an integral part of my identity.
-      </p>
-    </div>
-    <div class="banner-image-pf">
-      <img src="image/myself.jpg" alt="" />
+      <h1><?php echo $_SESSION['username']; ?>'s <span>Profile</span></h1>
+      <table class="profile-table">
+        <tr>
+          <th>Username</th>
+          <td><?php echo $userData['username']; ?></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><?php echo $userData['email']; ?></td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td><?php echo str_repeat('*', strlen($userData['password'])); ?></td>
+        </tr>
+        <tr>
+          <th>Current Plan</th>
+          <td><?php echo $subsData['plan_name']; ?></td>
+        </tr>
+      </table>
     </div>
   </div>
 
