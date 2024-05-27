@@ -61,7 +61,7 @@ $mencari = $_SESSION['id_user'];
             }
         }
 
-        header("Location: ../user-premium/index.php");
+        header("Location: ../user-premium/add-personalization.php");
     }
     ?>
 
