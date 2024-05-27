@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2024 at 03:16 PM
+-- Generation Time: May 27, 2024 at 04:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,16 +33,18 @@ CREATE TABLE `article` (
   `title` varchar(225) NOT NULL,
   `content` varchar(10000) NOT NULL,
   `information` varchar(225) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `image` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id_article`, `id_personalization`, `title`, `content`, `information`, `id_user`) VALUES
-(2, 6, 'Push Ups', '<li>Start in a plank position. Your core should be tight, shoulders pulled down and back, and your neck neutral.</li> <li>Bend your elbows and begin to lower your body down to the floor. When your chest grazes it, extend your elbows and return to the start. Focus on keeping your elbows close to your body during the movement.</li> <li>Complete 3 sets of as many reps as possible.</li>', '3 sets - 20x reps', 11),
-(12, 4, 'Single Leg Deadlifts', '<li>Begin standing with a dumbbell in your right hand, and your knees slightly bent.</li> <li>Hinging at the hips, begin to kick your left leg straight back behind you, lowering the dumbbell down toward the ground.</li> <li>When you reach a comfortable height with your left leg, slowly return to the starting position in a controlled motion, squeezing your right glute. Ensure that your pelvis stays square to the ground during the movement.</li> <li>Repeat 10 to 12 reps before moving the weight to your left hand and repeating the same steps on the left leg. It is suggested to do 3 sets of 10-12 reps per side.</li>', '3 sets - 2x reps/side', 12);
+INSERT INTO `article` (`id_article`, `id_personalization`, `title`, `content`, `information`, `id_user`, `image`) VALUES
+(2, 6, 'Push Ups', '<li>Start in a plank position. Your core should be tight, shoulders pulled down and back, and your neck neutral.</li> <li>Bend your elbows and begin to lower your body down to the floor. When your chest grazes it, extend your elbows and return to the start. Focus on keeping your elbows close to your body during the movement.</li> <li>Complete 3 sets of as many reps as possible.</li>', '3 sets - 20x reps', 11, '6650a353ee5f1.jpg'),
+(12, 4, 'Single Leg Deadlifts', '<li>Begin standing with a dumbbell in your right hand, and your knees slightly bent.</li> <li>Hinging at the hips, begin to kick your left leg straight back behind you, lowering the dumbbell down toward the ground.</li> <li>When you reach a comfortable height with your left leg, slowly return to the starting position in a controlled motion, squeezing your right glute. Ensure that your pelvis stays square to the ground during the movement.</li> <li>Repeat 10 to 12 reps before moving the weight to your left hand and repeating the same steps on the left leg. It is suggested to do 3 sets of 10-12 reps per side.</li>', '3 sets - 2x reps/side', 12, '6650a9e395a65.jpg'),
+(24, 25, 'Pull Ups', '<li>Stand facing an exercise bar.</li>\r\n<li>Grasp the bar from the top with your arms slightly more than shoulder-width apart.</li>\r\n<li>Use your shoulder muscles to pull you up, bringing your head up over the bar.</li>', '3 Sets - 12x Repetitions', 52, '66543f00b5b0f.jpg');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,8 @@ CREATE TABLE `personalization` (
 
 INSERT INTO `personalization` (`id_personalization`, `id_subscription`, `id_user`, `preferences`, `additional_preferences`) VALUES
 (4, 2, 12, 'Strength', 'Bodyweight Exercises'),
-(6, 1, 11, 'Cardio', 'Running, Cycling');
+(6, 1, 11, 'Cardio', 'Running or Other Cardio'),
+(25, 55, 52, 'Strength', 'Calisthenics');
 
 -- --------------------------------------------------------
 
@@ -87,19 +90,9 @@ CREATE TABLE `subscription` (
 INSERT INTO `subscription` (`id_subscription`, `id_user`, `plan_name`, `plan_price`, `status`) VALUES
 (1, 11, 'premium plan', '20000', 'active'),
 (2, 12, 'premium plan', '20000', 'active'),
-(7, 16, 'premium plan', '20000', 'active'),
-(8, 18, 'premium plan', '20000', 'active'),
-(22, 33, 'premium plan', '20000', 'active'),
-(30, 34, 'premium plan', '50000', 'active'),
-(31, 35, 'premium plan', '50000', 'active'),
-(32, 36, 'premium plan', '20000', 'active'),
-(33, 37, 'premium plan', '20000', 'active'),
-(34, 38, 'premium plan', '20000', 'active'),
-(35, 39, 'premium plan', '50000', 'active'),
-(36, 41, 'premium plan', '20000', 'active'),
-(37, 42, 'premium plan', '50000', 'active'),
 (39, 40, 'free plan', '0', 'active'),
-(48, 49, 'free plan', '0', 'active');
+(48, 49, 'free plan', '0', 'active'),
+(55, 52, 'premium plan', '20000', 'active');
 
 -- --------------------------------------------------------
 
@@ -122,20 +115,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `name`, `username`, `email`, `password`, `level`) VALUES
 (11, 'user', 'user', 'user@gmail.com', 'user', 'user'),
-(12, 'user1234', 'user1234', 'userprem@gmail.com', '1234', 'user'),
-(16, 'rafen', 'rafen', 'rafen@gmail.com', '1234', 'user'),
-(18, 'popon', 'popon', 'popon@gmail.com', '1234', 'user'),
-(33, 'ra', 'ra', 'ra@email.com', '1234', 'user'),
-(34, 'ojan', 'ojan', 'ojan@gmail.com', '1234', 'user'),
-(35, 'hali', 'hali', 'hali@gmail.com', '1234', 'user'),
-(36, 'rio', 'rio', 'rio@gmail.com', '1234', 'user'),
-(37, 'salman', 'salman', 'salman@gmail.com', '1234', 'user'),
-(38, 'qaysar', 'qaysar', 'qaysar@gmail.com', '1234', 'user'),
-(39, 'fayyadh', 'fayyadh', 'fayyadh@gmail.com', '1234', 'user'),
+(12, 'spidey', 'spidey', 'spidey@gmail.com', '1234', 'user'),
 (40, 'admin', 'admin', 'admin@gmail.com', 'admin', 'admin'),
-(41, 'yoshi', 'yoshi', 'yoshi@gmail.com', '1234', 'user'),
-(42, 'zhafif', 'zhafif', 'zhafif@gmail.com', '1234', 'user'),
-(49, 'nonprem', 'nonprem', 'nonprem@gmail.com', '1234', 'user');
+(49, 'nonprem', 'nonprem', 'nonprem@gmail.com', '1234', 'user'),
+(52, 'halow', 'halow', 'halow@gmail.com', '1234', 'user');
 
 --
 -- Indexes for dumped tables
@@ -178,25 +161,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `personalization`
 --
 ALTER TABLE `personalization`
-  MODIFY `id_personalization` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_personalization` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `subscription`
 --
 ALTER TABLE `subscription`
-  MODIFY `id_subscription` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_subscription` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Constraints for dumped tables
