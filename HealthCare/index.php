@@ -46,7 +46,7 @@
       <a href="loginpage.php">Login First!</a>
     </div>
     <div class="banner-image">
-      <img src="user/Image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
+      <img src="user/image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
     </div>
   </div>
 
@@ -54,14 +54,14 @@
   <div class="superior">
     <div class="superior-text">
       <div class="card">
-        <img class="card-img" src="user/Image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
+        <img class="card-img" src="user/image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
         <div class="card-text">
           <h3>Recommendations and Mentoring</h3>
           <p>There are various recommendations and guidelines for you to lead a healthy lifestyle.</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img" src="user/Image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
+        <img class="card-img" src="user/image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
         <div class="card-text">
           <h3>Tutorial Video</h3>
           <p>There are various tutorial videos to support your progress in adopting a healthy lifestyle.</p>
@@ -73,7 +73,7 @@
   <!-- motivation -->
   <div class="motivation">
     <div class="motivation-image">
-      <img src="user/Image/bodygoal.jpg" alt="" />
+      <img src="user/image/bodygoal.jpg" alt="" />
     </div>
     <div class="motivation-text">
       <h2>
@@ -81,9 +81,9 @@
       </h2>
       <hr>
       <div class="image">
-        <img src="user/Image/workout.jpg" alt="" />
-        <img src="user/Image/healthy_breakfast.jpg" alt="" />
-        <img src="user/Image/sleep.jpg" alt="" />
+        <img src="user/image/workout.jpg" alt="" />
+        <img src="user/image/healthy_breakfast.jpg" alt="" />
+        <img src="user/image/sleep.jpg" alt="" />
       </div>
     </div>
   </div>

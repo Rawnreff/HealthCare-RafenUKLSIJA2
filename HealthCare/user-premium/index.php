@@ -52,7 +52,7 @@ $mencari = $_SESSION['id_user'];
       <a href="daily-workouts.php">Find out with Daily Workouts</a>
     </div>
     <div class="banner-image">
-      <img src="Image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
+      <img src="image/healthy-lifestyle-habit-illustration_726237-57.jpg" alt="" />
     </div>
   </div>
 
@@ -60,14 +60,14 @@ $mencari = $_SESSION['id_user'];
   <div class="superior">
     <div class="superior-text">
       <div class="card">
-        <img class="card-img" src="Image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
+        <img class="card-img" src="image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
         <div class="card-text">
           <h3>Recommendations and Mentoring</h3>
           <p>There are various recommendations and guidelines for you to lead a healthy lifestyle.</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img" src="Image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
+        <img class="card-img" src="image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
         <div class="card-text">
           <h3>Tutorial Video</h3>
           <p>There are various tutorial videos to support your progress in adopting a healthy lifestyle.</p>
@@ -79,7 +79,7 @@ $mencari = $_SESSION['id_user'];
   <!-- motivation -->
   <div class="motivation">
     <div class="motivation-image">
-      <img src="Image/bodygoal.jpg" alt="" />
+      <img src="image/bodygoal.jpg" alt="" />
     </div>
     <div class="motivation-text">
       <h2>
@@ -87,9 +87,9 @@ $mencari = $_SESSION['id_user'];
       </h2>
       <hr>
       <div class="image">
-        <img src="Image/workout.jpg" alt="" />
-        <img src="Image/healthy_breakfast.jpg" alt="" />
-        <img src="Image/sleep.jpg" alt="" />
+        <img src="image/workout.jpg" alt="" />
+        <img src="image/healthy_breakfast.jpg" alt="" />
+        <img src="image/sleep.jpg" alt="" />
       </div>
     </div>
   </div>
