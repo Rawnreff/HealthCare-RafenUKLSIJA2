@@ -19,8 +19,8 @@
             
             <label for="type">Type:</label>
             <select name="type" required>
-                <option value="daily_workouts">Daily Workouts</option>
                 <option value="healthy_foods">Healthy Foods</option>
+                <option value="daily_workouts">Daily Workouts</option>
                 <option value="sleep_programs">Sleep Programs</option>
             </select><br>
 
@@ -31,10 +31,10 @@
             <input type="text" name="title" required><br>
 
             <label for="information">Information:</label>
-            <input type="text" name="information" required><br>
+            <textarea style="height:60px; width:392px; margin-top: 10px; margin-bottom: 8px;" name="information"></textarea>
 
-            <label for="content">Content:</label><br>
-            <textarea style="height:200px; width:395px;" name="content"></textarea>
+            <label for="content">Content:</label>
+            <textarea style="height:200px; width:392px; margin-top: 10px; margin-bottom: 8px;" name="content"></textarea>
 
             <br>
 

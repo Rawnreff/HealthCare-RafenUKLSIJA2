@@ -76,17 +76,16 @@ if (isset($_GET['id'])) {
             <form method="POST" action="" enctype="multipart/form-data">
 
                 <label for="image">Image:</label><br>
-                <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp"><br><br>
+                <input style="margin-top: 8px;" type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp"><br><br>
 
                 <label for="title">Title:</label><br>
                 <input type="text" name="title" value="<?php echo $data['title']; ?>">
 
-                <label for="information">Information:</label><br>
-                <input type="text" name="information" value="<?php echo $data['information']; ?>">
+                <label for="information">Information:</label>
+                <textarea style="height:40px; width:395px; margin-top: 10px; margin-bottom: 6px;" name="information"><?php echo htmlspecialchars($data['information'], ENT_QUOTES, 'UTF-8'); ?></textarea>
 
-                <label for="content">Content:</label><br><br>
-                <textarea style="height:200px; width:395px;"
-                    name="content"><?php echo htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+                <label for="content">Content:</label>
+                <textarea style="height:200px; width:395px; margin-top: 10px;" name="content"><?php echo htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
 
                 <br><br>
 

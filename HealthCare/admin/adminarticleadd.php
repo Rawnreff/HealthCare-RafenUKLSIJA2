@@ -26,12 +26,10 @@
             <input type="text" name="title" required><br>
 
             <label for="information">Information:</label>
-            <input type="text" name="information" required><br>
+            <textarea style="height:40px; width:392px; margin-top: 10px; margin-bottom: 8px;" name="information"></textarea>
 
-            <label for="content">Content:</label><br>
-            <textarea style="height:200px; width:395px;" name="content"></textarea>
-
-            <br>
+            <label for="content">Content:</label>
+            <textarea style="height:200px; width:392px; margin-top: 10px; margin-bottom: 8px;" name="content"></textarea>
 
             <button class="button" type="Submit" name="Submit">Add</button>
         </form>

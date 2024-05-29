@@ -165,12 +165,12 @@ $mencari = $_SESSION['id_user'];
             <li><span>Asparagus</span><br>Asparagus is a popular vegetable that is low in both carbs and calories and
               rich in vitamin K.</li>
             <li><span>Bell peppers</span><br>Bell peppers come in several colors, including red, yellow, and green.
-              They’re crunchy and sweet and are a great source of antioxidants and vitamin C.</li>
-            <li><span>Broccoli</span><br>Broccoli is a cruciferous vegetable that tastes great both raw and cooked. It’s
+              They are crunchy and sweet and are a great source of antioxidants and vitamin C.</li>
+            <li><span>Broccoli</span><br>Broccoli is a cruciferous vegetable that tastes great both raw and cooked. It is
               an excellent source of fiber and vitamins C and K and contains a decent amount of protein compared with
               other vegetables.</li>
-            <li><span>Carrots</span><br>Carrots are a popular root vegetable. They’re sweet, crunchy, and loaded with
-              nutrients such as fiber and vitamin K. They’re also high in carotene antioxidants, which have numerous
+            <li><span>Carrots</span><br>Carrots are a popular root vegetable. They are sweet, crunchy, and loaded with
+              nutrients such as fiber and vitamin K. They are also high in carotene antioxidants, which have numerous
               benefits. Put a few carrots stick in your lunch box or use them for eating guacamole and other dips.</li>
             <li><span>Cauliflower</span><br>Cauliflower is a very versatile cruciferous vegetable. You can add it to
               curries, roast it with olive oil, or use it raw in salads or for dipping.</li>
