@@ -78,9 +78,7 @@ $mencari = $_SESSION['id_user'];
 
     $total_tables = count($articles);
     if ($total_tables == 0) {
-      $total_tables += 2;
-    } elseif ($total_tables % 2 != 0) {
-      $total_tables++;
+      $total_tables += 1;
     }
 
     $current_table = 0;

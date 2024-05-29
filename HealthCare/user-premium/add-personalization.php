@@ -42,14 +42,13 @@ $mencari = $_SESSION['id_user'];
     <?php
     if (isset($_POST['Submit'])) {
         $id_user = $_SESSION['id_user'];
-        $id_subscription = $_SESSION['id_subscription'];
         $preferences = $_POST['preferences'];
         $additional_preferences = $_POST['additional_preferences'];
 
         include_once ("../connect.php");
 
-        $result = mysqli_query($mysqli, "INSERT INTO personalization(id_subscription,id_user,preferences,additional_preferences)
-    VALUES('$id_subscription','$id_user','$preferences','$additional_preferences')");
+        $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user,preferences,additional_preferences)
+    VALUES('$id_user','$preferences','$additional_preferences')");
 
         header("location:personalized-page.php");
     }

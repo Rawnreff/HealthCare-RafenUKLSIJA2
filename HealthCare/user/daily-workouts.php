@@ -110,7 +110,7 @@ $mencari = $_SESSION['id_user'];
             <li>Start by standing straight, with your feet slightly wider than shoulder-width apart, and your arms at
               your sides.</li>
             <li>Brace your core and, keeping your chest and chin up, push your hips back and bend your knees as if
-              you’re going to sit in a chair.</li>
+              you're going to sit in a chair.</li>
             <li>Ensuring your knees don't bow inward or outward, drop down until your thighs are parallel to the ground,
               bringing your arms out in front of you in a comfortable position. Pause for 1 second, then extend your
               legs and return to the starting position.</li>
