@@ -25,6 +25,7 @@
             <li><a href="adminsubs.php" class="btn-nav">Subscription</a></li>
             <li><a href="adminperson.php" class="btn-nav">Personalization</a></li>
             <li><a href="adminarticle.php" class="btn-nav">Article</a></li>
+            <li><a href="adminpillars.php" class="btn-nav">Pillars</a></li>
         </ul>
     </header>
     <section class="user">

@@ -46,7 +46,7 @@ $mencari = $_SESSION['id_user'];
         relationship with what you consume. Explore the colorful palette of nature's bounty, savoring the crisp
         freshness of fruits, the nourishing goodness of vegetables, and the wholesome richness of whole grains. Your
         plate is a canvas, and each mindful bite is an expression of your commitment to self-care, creating a symphony
-        of flavors that nourish not just your body but your overall well-being
+        of flavors that nourish not just your body but your overall well-being.
       </p>
     </div>
     <div class="banner-image">
