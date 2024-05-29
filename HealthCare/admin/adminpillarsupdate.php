@@ -2,10 +2,11 @@
 include '../connect.php';
 
 if (isset($_GET['id'])) {
-    $id_article = $_GET['id'];
+    $id_pillars = $_GET['id'];
 
     if (isset($_POST['submit'])) {
         $title = $_POST['title'];
+        $type = $_POST['type'];
         $information = $_POST['information'];
         $content = $_POST['content'];
 
@@ -28,26 +29,26 @@ if (isset($_GET['id'])) {
                 $newImageName = uniqid();
                 $newImageName .= '.' . $imageExtension;
 
-                move_uploaded_file($tmpName, 'img/' . $newImageName);
+                move_uploaded_file($tmpName, 'img-pillars/' . $newImageName);
             }
         }
 
-        $query = "UPDATE article SET image='$newImageName', title='$title', information='$information', content='$content' WHERE id_article='$id_article'";
+        $query = "UPDATE pillars SET type='$type', image='$newImageName', title='$title', information='$information', content='$content' WHERE id_pillars='$id_pillars'";
         $result = mysqli_query($mysqli, $query);
 
         if ($result) {
-            header("Location: adminarticle.php");
+            header("Location: adminpillars.php");
             exit;
         } else {
             echo "Error: " . mysqli_error($mysqli);
         }
     }
 
-    $query = "SELECT * FROM article WHERE id_article='$id_article'";
+    $query = "SELECT * FROM pillars WHERE id_pillars='$id_pillars'";
     $result = mysqli_query($mysqli, $query);
     $data = mysqli_fetch_assoc($result);
 } else {
-    header("Location: adminarticle.php");
+    header("Location: adminpillars.php");
     exit;
 }
 ?>
@@ -58,7 +59,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(Admin) Update Article</title>
+    <title>(Admin) Update Pillars</title>
     <link rel="icon" type="image/png" href="../logotitle.png">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
         rel="stylesheet" />
@@ -70,10 +71,17 @@ if (isset($_GET['id'])) {
 <body>
     <div class="container">
         <header>
-            <h1 class="title">Update Article</h1>
+            <h1 class="title">Update Pillars</h1>
         </header>
         <section class="form">
             <form method="POST" action="" enctype="multipart/form-data">
+
+                <label for="type">Type:</label>
+            <select name="type" required>
+                <option value="daily_workouts">Daily Workouts</option>
+                <option value="healthy_foods">Healthy Foods</option>
+                <option value="sleep_programs">Sleep Programs</option>
+            </select><br>
 
                 <label for="image">Image:</label><br>
                 <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp"><br><br>
