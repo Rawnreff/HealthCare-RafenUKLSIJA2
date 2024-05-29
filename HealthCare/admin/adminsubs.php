@@ -41,6 +41,7 @@
                 <th>Plan Name</th>
                 <th>Plan Price</th>
                 <th>Status</th>
+                <th>Activation Date</th>
                 <th>Action</th>
                 <th>Action</th>
             </tr>
@@ -59,6 +60,7 @@
                     <td><?php echo $data['plan_name']; ?></td>
                     <td><?php echo $data['plan_price']; ?></td>
                     <td><?php echo $data['status']; ?></td>
+                    <td><?php echo $data['activation_date']; ?></td>
                     <td><a href="adminsubsdelete.php?id=<?php echo $data['id_subscription']; ?>"
                             class="btn-hapus">Delete</a> </td>
                     <td><a href="adminsubsupdate.php?id=<?php echo $data['id_subscription']; ?>"

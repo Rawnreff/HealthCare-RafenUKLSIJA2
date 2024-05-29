@@ -17,8 +17,8 @@
         <h1 class="title">Add Subscription</h1>
         <form class="form" action="adminsubsadd.php" method="post">
 
-            <label for="id_user">Id User:</label>
-            <input type="text" name="id_user" required><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
 
             <label for="plan_name">Plan Name:</label>
             <select name="plan_name" required>
@@ -44,20 +44,45 @@
     </div>
 
     <?php
-    if (isset($_POST['Submit'])) {
-        $id_user = $_POST['id_user'];
-        $plan_name = $_POST['plan_name'];
-        $plan_price = $_POST['plan_price'];
-        $status = $_POST['status'];
+include_once ("../connect.php");
 
-        include_once ("../connect.php");
+function getUsernameId($username, $mysqli) {
+    $query = "SELECT id_user FROM user WHERE username = '$username'";
+    $result = mysqli_query($mysqli, $query);
 
-        $result = mysqli_query($mysqli, "INSERT INTO subscription(id_user,plan_name,plan_price,status)
-    VALUES('$id_user','$plan_name','$plan_price','$status')");
-
-        header("location:adminsubs.php");
+    if(mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        return $row['id_user'];
+    } else {
+        return null;
     }
-    ?>
+}
+
+if (isset($_POST['Submit'])) {
+    $username = $_POST['username'];
+    $plan_name = $_POST['plan_name'];
+    $plan_price = $_POST['plan_price'];
+    $status = $_POST['status'];
+    $activation_date = date('Y-m-d');
+
+    $id_user = getUsernameId($username, $mysqli);
+
+    if($id_user !== null) {
+        $result = mysqli_query($mysqli, "INSERT INTO subscription(id_user,plan_name,plan_price,status,activation_date)
+            VALUES('$id_user','$plan_name','$plan_price','$status','$activation_date')");
+
+        if ($result) {
+            header("location:adminsubs.php");
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($mysqli);
+        }
+    } else {
+        echo "Username not found.";
+    }
+}
+?>
+
 
 </body>
 
