@@ -67,7 +67,10 @@ $mencari = $_SESSION['id_user'];
   <div class="wrap-mentoring">
     <?php
     include '../connect.php';
-    $query_mysql = mysqli_query($mysqli, "SELECT * FROM article WHERE id_user=$mencari") or die(mysqli_error($mysqli));
+    $query_mysql = mysqli_query($mysqli, "SELECT article.* FROM article 
+                                          INNER JOIN personalization 
+                                          ON article.id_personalization = personalization.id_personalization 
+                                          WHERE personalization.id_user = $mencari") or die(mysqli_error($mysqli));
     $articles = [];
     while ($data = mysqli_fetch_array($query_mysql)) {
       $articles[] = $data;
@@ -88,7 +91,7 @@ $mencari = $_SESSION['id_user'];
       <div class="mentoring">
         <div class="card-mentoring">
           <div class="card-mentoring-image">
-          <table border="0" class="table">
+            <table border="0" class="table">
               <?php
               $start_index = $i * $articles_per_table;
               $end_index = min(($i + 1) * $articles_per_table, count($articles));
@@ -104,7 +107,7 @@ $mencari = $_SESSION['id_user'];
               <?php } ?>
             </table>
           </div>
-          <div class="card-mentoring-text"
+          <div class="card-mentoring-text">
             <table border="0" class="table">
               <?php
               $start_index = $i * $articles_per_table;
