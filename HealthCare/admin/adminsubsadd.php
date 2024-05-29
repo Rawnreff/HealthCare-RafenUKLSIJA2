@@ -44,44 +44,45 @@
     </div>
 
     <?php
-include_once ("../connect.php");
+    include_once ("../connect.php");
 
-function getUsernameId($username, $mysqli) {
-    $query = "SELECT id_user FROM user WHERE username = '$username'";
-    $result = mysqli_query($mysqli, $query);
+    function getUsernameId($username, $mysqli)
+    {
+        $query = "SELECT id_user FROM user WHERE username = '$username'";
+        $result = mysqli_query($mysqli, $query);
 
-    if(mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        return $row['id_user'];
-    } else {
-        return null;
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            return $row['id_user'];
+        } else {
+            return null;
+        }
     }
-}
 
-if (isset($_POST['Submit'])) {
-    $username = $_POST['username'];
-    $plan_name = $_POST['plan_name'];
-    $plan_price = $_POST['plan_price'];
-    $status = $_POST['status'];
-    $activation_date = date('Y-m-d');
+    if (isset($_POST['Submit'])) {
+        $username = $_POST['username'];
+        $plan_name = $_POST['plan_name'];
+        $plan_price = $_POST['plan_price'];
+        $status = $_POST['status'];
+        $activation_date = date('Y-m-d');
 
-    $id_user = getUsernameId($username, $mysqli);
+        $id_user = getUsernameId($username, $mysqli);
 
-    if($id_user !== null) {
-        $result = mysqli_query($mysqli, "INSERT INTO subscription(id_user,plan_name,plan_price,status,activation_date)
+        if ($id_user !== null) {
+            $result = mysqli_query($mysqli, "INSERT INTO subscription(id_user,plan_name,plan_price,status,activation_date)
             VALUES('$id_user','$plan_name','$plan_price','$status','$activation_date')");
 
-        if ($result) {
-            header("location:adminsubs.php");
-            exit();
+            if ($result) {
+                header("location:adminsubs.php");
+                exit();
+            } else {
+                echo "Error: " . mysqli_error($mysqli);
+            }
         } else {
-            echo "Error: " . mysqli_error($mysqli);
+            echo "Username not found.";
         }
-    } else {
-        echo "Username not found.";
     }
-}
-?>
+    ?>
 
 
 </body>

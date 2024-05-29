@@ -17,11 +17,8 @@
         <h1 class="title">Add Personalization</h1>
         <form class="form" action="adminpersonadd.php" method="post">
 
-            <label for="id_user">Id User:</label>
-            <input type="text" name="id_user" required><br>
-
-            <label for="id_subscription">Id Subscription:</label>
-            <input type="text" name="id_subscription" required><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
 
             <label for="preferences">Preferences:</label>
             <input type="text" name="preferences" required><br>
@@ -29,25 +26,47 @@
             <label for="additional_preferences">Additional Preferences:</label>
             <input type="text" name="additional_preferences" required><br>
 
-            <br>
 
             <button class="button" type="Submit" name="Submit">Add</button>
         </form>
     </div>
 
     <?php
+    include_once ("../connect.php");
+
+    function getUsernameId($username, $mysqli)
+    {
+        $query = "SELECT id_user FROM user WHERE username = '$username'";
+        $result = mysqli_query($mysqli, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            return $row['id_user'];
+        } else {
+            return null;
+        }
+    }
+
     if (isset($_POST['Submit'])) {
-        $id_user = $_POST['id_user'];
-        $id_subscription = $_POST['id_subscription'];
+        $username = $_POST['username'];
         $preferences = $_POST['preferences'];
         $additional_preferences = $_POST['additional_preferences'];
 
-        include_once ("../connect.php");
+        $id_user = getUsernameId($username, $mysqli);
 
-        $result = mysqli_query($mysqli, "INSERT INTO personalization(id_subscription,id_user,preferences,additional_preferences)
-    VALUES('$id_subscription','$id_user','$preferences','$additional_preferences')");
+        if ($id_user !== null) {
+            $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user,preferences,additional_preferences)
+            VALUES('$id_user','$preferences','$additional_preferences')");
 
-        header("location:adminperson.php");
+            if ($result) {
+                header("location:adminperson.php");
+                exit();
+            } else {
+                echo "Error: " . mysqli_error($mysqli);
+            }
+        } else {
+            echo "Username not found.";
+        }
     }
     ?>
 

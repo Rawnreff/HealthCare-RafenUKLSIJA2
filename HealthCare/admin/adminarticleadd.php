@@ -16,11 +16,8 @@
     <div class="regist-container">
         <h1 class="title">Add Article</h1>
         <form class="form" action="adminarticleadd.php" method="POST" enctype="multipart/form-data">
-            <label for="id_user">Id User:</label>
-            <input type="text" name="id_user" required><br>
-
-            <label for="id_personalization">Id Personalization:</label>
-            <input type="text" name="id_personalization" required><br>
+            <label for="username">Additional Preferences:</label>
+            <input type="text" name="username" required><br>
 
             <label for="image">Image:</label>
             <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required><br>
@@ -42,8 +39,7 @@
 
     <?php
     if (isset($_POST['Submit'])) {
-        $id_user = $_POST['id_user'];
-        $id_personalization = $_POST['id_personalization'];
+        $username = $_POST['username'];
         $title = $_POST['title'];
         $information = $_POST['information'];
         $content = $_POST['content'];
