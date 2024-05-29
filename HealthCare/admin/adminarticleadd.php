@@ -16,7 +16,7 @@
     <div class="regist-container">
         <h1 class="title">Add Article</h1>
         <form class="form" action="adminarticleadd.php" method="POST" enctype="multipart/form-data">
-            <label for="username">Additional Preferences:</label>
+            <label for="username">Username:</label>
             <input type="text" name="username" required><br>
 
             <label for="image">Image:</label>
@@ -64,13 +64,29 @@
 
                 move_uploaded_file($tmpName, 'img/' . $newImageName);
 
-
                 include_once ("../connect.php");
 
-                $result = mysqli_query($mysqli, "INSERT INTO article(id_personalization,image,title,information,content,id_user)
-    VALUES('$id_personalization','$newImageName','$title','$information','$content','$id_user')");
+                $user_query = mysqli_query($mysqli, "SELECT id_user FROM user WHERE username = '$username'");
+                $user_row = mysqli_fetch_assoc($user_query);
+                $id_user = $user_row['id_user'];
 
-                header("location:adminarticle.php");
+                $query = "SELECT p.id_personalization 
+                      FROM personalization p 
+                      JOIN user u ON p.id_user = u.id_user 
+                      WHERE u.id_user = '$id_user'";
+                $result = mysqli_query($mysqli, $query);
+                $row = mysqli_fetch_assoc($result);
+                $id_personalization = $row['id_personalization'];
+
+                $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
+                             VALUES('$id_personalization','$newImageName','$title','$information','$content')";
+                $result_insert = mysqli_query($mysqli, $query_insert);
+
+                if ($result_insert) {
+                    header("location:adminarticle.php");
+                } else {
+                    echo "<script> alert('Failed to add article'); </script>";
+                }
             }
         }
     }
