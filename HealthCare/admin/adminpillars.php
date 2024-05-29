@@ -29,10 +29,10 @@
         </ul>
     </header>
     <section class="user">
-        <h1 class="heading">Article Data</h1>
+        <h1 class="heading">Pillars Data</h1>
         <br>
         <br>
-        <a href="adminarticleadd.php" class="btn">Add Article</a>
+        <a href="adminpillarsadd.php" class="btn">Add Pillars</a>
         <br>
         <br>
         <table border="1" class="table">
@@ -48,25 +48,20 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT a.*, u.username 
-                                                FROM article a 
-                                                JOIN personalization p 
-                                                ON a.id_personalization = p.id_personalization 
-                                                JOIN user u 
-                                                ON p.id_user = u.id_user") or die(mysqli_error($mysqli));
+            $query_mysql = mysqli_query($mysqli, "SELECT * FROM pillars") or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
                 <tr>
                     <td><?php echo $nomor++; ?></td>
-                    <td><?php echo $data['username']; ?></td>
-                    <td><img src="img/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
+                    <td><?php echo $data['type']; ?></td>
+                    <td><img src="img-pillars/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>
                     <td><?php echo $data['content']; ?></td>
-                    <td><a href="adminarticledelete.php?id=<?php echo $data['id_article']; ?>" class="btn-hapus">Delete</a>
+                    <td><a href="adminpillarsdelete.php?id=<?php echo $data['id_pillars']; ?>" class="btn-hapus">Delete</a>
                     </td>
-                    <td><a href="adminarticleupdate.php?id=<?php echo $data['id_article']; ?>" class="btn-update">Update</a>
+                    <td><a href="adminpillarsupdate.php?id=<?php echo $data['id_pillars']; ?>" class="btn-update">Update</a>
                     </td>
                 </tr>
             <?php } ?>

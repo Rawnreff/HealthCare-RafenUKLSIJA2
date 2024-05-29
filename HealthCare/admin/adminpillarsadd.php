@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(Admin) Add Article</title>
+    <title>(Admin) Add Pillars</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Signika:wght@400;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet"
@@ -14,10 +14,15 @@
 
 <body>
     <div class="regist-container">
-        <h1 class="title">Add Article</h1>
-        <form class="form" action="adminarticleadd.php" method="POST" enctype="multipart/form-data">
-            <label for="username">Username:</label>
-            <input type="text" name="username" required><br>
+        <h1 class="title">Add Pillars</h1>
+        <form class="form" action="adminpillarsadd.php" method="post" enctype="multipart/form-data">
+            
+            <label for="type">Type:</label>
+            <select name="type" required>
+                <option value="daily_workouts">Daily Workouts</option>
+                <option value="healthy_foods">Healthy Foods</option>
+                <option value="sleep_programs">Sleep Programs</option>
+            </select><br>
 
             <label for="image">Image:</label>
             <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp" required><br>
@@ -39,7 +44,7 @@
 
     <?php
     if (isset($_POST['Submit'])) {
-        $username = $_POST['username'];
+        $type = $_POST['type'];
         $title = $_POST['title'];
         $information = $_POST['information'];
         $content = $_POST['content'];
@@ -62,30 +67,18 @@
                 $newImageName = uniqid();
                 $newImageName .= '.' . $imageExtension;
 
-                move_uploaded_file($tmpName, 'img/' . $newImageName);
+                move_uploaded_file($tmpName, 'img-pillars/' . $newImageName);
 
                 include_once ("../connect.php");
 
-                $user_query = mysqli_query($mysqli, "SELECT id_user FROM user WHERE username = '$username'");
-                $user_row = mysqli_fetch_assoc($user_query);
-                $id_user = $user_row['id_user'];
-
-                $query = "SELECT p.id_personalization 
-                      FROM personalization p 
-                      JOIN user u ON p.id_user = u.id_user 
-                      WHERE u.id_user = '$id_user'";
-                $result = mysqli_query($mysqli, $query);
-                $row = mysqli_fetch_assoc($result);
-                $id_personalization = $row['id_personalization'];
-
-                $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
-                             VALUES('$id_personalization','$newImageName','$title','$information','$content')";
+                $query_insert = "INSERT INTO pillars(type,image,title,information,content)
+                             VALUES('$type','$newImageName','$title','$information','$content')";
                 $result_insert = mysqli_query($mysqli, $query_insert);
 
                 if ($result_insert) {
-                    header("location:adminarticle.php");
+                    header("location:adminpillars.php");
                 } else {
-                    echo "<script> alert('Failed to add article'); </script>";
+                    echo "<script> alert('Failed to add pillars'); </script>";
                 }
             }
         }
