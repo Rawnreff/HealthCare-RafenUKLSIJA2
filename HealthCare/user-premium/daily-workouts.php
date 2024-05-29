@@ -97,35 +97,36 @@ $mencari = $_SESSION['id_user'];
               <?php } ?>
             </table>
           </div>
-          <div class="card-mentoring-text" <table border="0" class="table">
-            <?php
-            $start_index = $i * $articles_per_table;
-            $end_index = min(($i + 1) * $articles_per_table, count($articles));
+          <div class="card-mentoring-text">
+            <table border="0" class="table">
+              <?php
+              $start_index = $i * $articles_per_table;
+              $end_index = min(($i + 1) * $articles_per_table, count($articles));
 
-            for ($j = $start_index; $j < $end_index; $j++) {
-              $data = $articles[$j];
-              ?>
-              <tr>
-                <td>
-                  <h2><?php echo $data['title']; ?></h2>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p><span><?php echo $data['information']; ?></span></p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <hr>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <ol><?php echo $data['content']; ?></ol>
-                </td>
-              </tr>
-            <?php } ?>
+              for ($j = $start_index; $j < $end_index; $j++) {
+                $data = $articles[$j];
+                ?>
+                <tr>
+                  <td>
+                    <h2><?php echo $data['title']; ?></h2>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p><span><?php echo $data['information']; ?></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <ol><?php echo $data['content']; ?></ol>
+                  </td>
+                </tr>
+              <?php } ?>
             </table>
           </div>
         </div>
