@@ -39,8 +39,8 @@
                 <th>No.</th>
                 <th>Name</th>
                 <th>Username</th>
-                <th>Password</th>
                 <th>Email</th>
+                <th>Password</th>
                 <th>Level</th>
                 <th>Action</th>
                 <th>Action</th>
@@ -55,8 +55,8 @@
                     <td><?php echo $nomor++; ?></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['username']; ?></td>
-                    <td><?php echo $data['password']; ?></td>
                     <td><?php echo $data['email']; ?></td>
+                    <td><?php echo $data['password']; ?></td>
                     <td><?php echo $data['level']; ?></td>
                     <td><a href="adminuserdelete.php?id=<?php echo $data['id_user']; ?>" class="btn-hapus">Delete</a> </td>
                     <td><a href="adminuserupdate.php?id=<?php echo $data['id_user']; ?>" class="btn-update">Update</a> </td>

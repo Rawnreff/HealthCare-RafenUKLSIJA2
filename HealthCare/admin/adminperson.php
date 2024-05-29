@@ -45,8 +45,6 @@
             </tr>
             <?php
             include '../connect.php';
-
-            // Query untuk mendapatkan username dari tabel personalization dengan JOIN ke tabel user
             $query_mysql = mysqli_query($mysqli, "SELECT personalization.*, user.username 
                                                   FROM personalization 
                                                   JOIN user ON personalization.id_user = user.id_user")

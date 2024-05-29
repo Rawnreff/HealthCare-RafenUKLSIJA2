@@ -46,8 +46,6 @@
             </tr>
             <?php
             include '../connect.php';
-
-            // Query untuk mendapatkan username dari tabel subscription dengan JOIN ke tabel user
             $query_mysql = mysqli_query($mysqli, "SELECT subscription.*, user.username 
                                                   FROM subscription 
                                                   JOIN user ON subscription.id_user = user.id_user")
