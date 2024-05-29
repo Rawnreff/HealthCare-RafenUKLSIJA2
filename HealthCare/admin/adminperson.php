@@ -37,9 +37,7 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Id User</th>
-                <th>Id Subscription</th>
-                <th>Id Personalization</th>
+                <th>Username</th>
                 <th>Preferences</th>
                 <th>Additional Preferences</th>
                 <th>Action</th>
@@ -47,15 +45,18 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM personalization") or die(mysqli_error($mysqli));
+
+            // Query untuk mendapatkan username dari tabel personalization dengan JOIN ke tabel user
+            $query_mysql = mysqli_query($mysqli, "SELECT personalization.*, user.username 
+                                                  FROM personalization 
+                                                  JOIN user ON personalization.id_user = user.id_user")
+                or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
                 <tr>
                     <td><?php echo $nomor++; ?></td>
-                    <td><?php echo $data['id_user']; ?></td>
-                    <td><?php echo $data['id_subscription']; ?></td>
-                    <td><?php echo $data['id_personalization']; ?></td>
+                    <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['preferences']; ?></td>
                     <td><?php echo $data['additional_preferences']; ?></td>
                     <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>"

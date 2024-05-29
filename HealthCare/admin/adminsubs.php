@@ -37,8 +37,7 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Id User</th>
-                <th>Id Subscription</th>
+                <th>Username</th>
                 <th>Plan Name</th>
                 <th>Plan Price</th>
                 <th>Status</th>
@@ -47,14 +46,18 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM subscription") or die(mysqli_error($mysqli));
+
+            // Query untuk mendapatkan username dari tabel subscription dengan JOIN ke tabel user
+            $query_mysql = mysqli_query($mysqli, "SELECT subscription.*, user.username 
+                                                  FROM subscription 
+                                                  JOIN user ON subscription.id_user = user.id_user")
+                or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
                 <tr>
                     <td><?php echo $nomor++; ?></td>
-                    <td><?php echo $data['id_user']; ?></td>
-                    <td><?php echo $data['id_subscription']; ?></td>
+                    <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['plan_name']; ?></td>
                     <td><?php echo $data['plan_price']; ?></td>
                     <td><?php echo $data['status']; ?></td>

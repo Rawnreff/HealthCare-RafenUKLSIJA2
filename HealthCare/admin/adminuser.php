@@ -37,7 +37,6 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Id User</th>
                 <th>Name</th>
                 <th>Username</th>
                 <th>Password</th>
@@ -54,7 +53,6 @@
                 ?>
                 <tr>
                     <td><?php echo $nomor++; ?></td>
-                    <td><?php echo $data['id_user']; ?></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['password']; ?></td>
