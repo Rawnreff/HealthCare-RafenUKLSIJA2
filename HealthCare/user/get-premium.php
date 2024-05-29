@@ -38,13 +38,14 @@ $mencari = $_SESSION['id_user'];
         $plan_name = 'premium plan';
         $plan_price = $_POST['plan_price'];
         $status = 'active';
+        $activation_date = date('Y-m-d');
 
         include_once ("../connect.php");
 
         $check_subscription = mysqli_query($mysqli, "SELECT * FROM subscription WHERE id_user='$id_user'");
 
         if (mysqli_num_rows($check_subscription) > 0) {
-            $update_subscription = mysqli_query($mysqli, "UPDATE subscription SET plan_name='$plan_name', plan_price='$plan_price', status='$status' WHERE id_user='$id_user'");
+            $update_subscription = mysqli_query($mysqli, "UPDATE subscription SET plan_name='$plan_name', plan_price='$plan_price', status='$status', activation_date='$activation_date' WHERE id_user='$id_user'");
 
             if ($update_subscription) {
                 echo "Data subscription berhasil diperbarui";
@@ -52,7 +53,7 @@ $mencari = $_SESSION['id_user'];
                 echo "Gagal memperbarui data subscription: " . mysqli_error($mysqli);
             }
         } else {
-            $insert_subscription = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status) VALUES('$id_user', '$plan_name', '$plan_price', '$status')");
+            $insert_subscription = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status, activation_date) VALUES('$id_user', '$plan_name', '$plan_price', '$status', '$activation_date')");
 
             if ($insert_subscription) {
                 echo "Data subscription berhasil ditambahkan";

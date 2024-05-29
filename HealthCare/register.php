@@ -52,6 +52,7 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
         $plan_name = 'free plan';
         $plan_price = '0';
         $status = 'active';
+        $activation_date = date('Y-m-d');
 
         include_once ("connect.php");
 
@@ -95,7 +96,7 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
             if ($result) {
                 $id_user = mysqli_insert_id($mysqli);
 
-                $subscription_result = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status) VALUES('$id_user', '$plan_name', '$plan_price', '$status')");
+                $subscription_result = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status, activation_date) VALUES('$id_user', '$plan_name', '$plan_price', '$status','$activation_date')");
 
                 if ($subscription_result) {
                     echo "Data berhasil ditambahkan ke tabel subscription";
