@@ -90,7 +90,7 @@ $mencari = $_SESSION['id_user'];
           <ol>
             <li>Start by standing with your feet shoulder-width apart and arms down at your sides.</li>
             <li>Take a step forward with your right leg and bend your right knee as you do so, stopping when your thigh
-              is parallel to the ground. Ensure that your right knee doesn’t extend past your right foot.</li>
+              is parallel to the ground. Ensure that your right knee doesnt extend past your right foot.</li>
             <li>Push up off your right foot and return to the starting position. Repeat with your left leg. This is one
               rep.</li>
             <li>Complete 3 sets of 10 reps.</li>

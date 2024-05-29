@@ -108,7 +108,7 @@ $mencari = $_SESSION['id_user'];
               source of high-quality protein, essential for muscle growth and repair. Beyond its protein content, lean
               beef delivers bioavailable iron, zinc, and a spectrum of B vitamins (B12, B6, niacin, riboflavin), making
               it a nutrient-dense choice supporting muscle health and overall well-being.</li>
-            <li><span>Chicken breast</span><br>Chicken breast is low in fat and calories but high in protein. It’s a
+            <li><span>Chicken breast</span><br>Chicken breast is low in fat and calories but high in protein. Its a
               great source of many nutrients. Experience the lean elegance of chicken breasts, low in fat and calories
               but abundant in protein. Ideal for weight management, chicken breasts provide B vitamins, phosphorus, and
               selenium, contributing not only to satiety but also supporting muscle health.</li>
@@ -130,7 +130,7 @@ $mencari = $_SESSION['id_user'];
           <hr>
           <p>Despite being high in unsaturated fat and calories, nuts and seeds may help lower the risk of
             cardiovascular disease, cancer, and other health issues. They are a satisfying snack could help those
-            managing their weight. They also require almost no preparation, so they’re easy to add to your routine. They
+            managing their weight. They also require almost no preparation, so theyre easy to add to your routine. They
             can also add texture to salads and other dishes. However, they are not suitable for people with a nut
             allergy.</p>
           <ol>
@@ -204,7 +204,7 @@ $mencari = $_SESSION['id_user'];
           <ol>
             <li><span>Potatoes</span><br>Potatoes provide potassium and contain a little of almost every nutrient you
               need, including vitamin C. With their jackets, they are also a good source of fiber. Potatoes contain more
-              water and are less energy-dense than pasta and rice, and can leave you feeling full, so that you don’t
+              water and are less energy-dense than pasta and rice, and can leave you feeling full, so that you dont
               need to eat more. As a result, they may help with weight loss.</li>
             <li><span>Sweet Potatoes</span><br>Sweet potatoes are rich in antioxidants, beta carotene, vitamin A, and
               other essential nutrients. Eat them baked, mashed, or added to other dishes.</li>
@@ -225,14 +225,14 @@ $mencari = $_SESSION['id_user'];
             diet because they require little to no preparation.</p>
           <ol>
             <li><span>Apples</span><br>Apples contain fiber, vitamin C, and numerous antioxidants. They are very filling
-              and make the perfect snack if you’re hungry between meals.</li>
+              and make the perfect snack if you are hungry between meals.</li>
             <li><span>Avocados</span><br>Avocados are different from most other fruits because they contain lots of
               healthy fat. They are not only creamy and tasty but also high in fiber, potassium, and vitamin C. Swap
               mayonnaise for avocado as a salad dressing, or spread it on toast for breakfast.</li>
-            <li><span>Bananas</span><br>Bananas are a good source of potassium. They’re also high in vitamin B6 and
+            <li><span>Bananas</span><br>Bananas are a good source of potassium. They are also high in vitamin B6 and
               fiber and are convenient and portable.</li>
             <li><span>Blueberries</span><br>Blueberries are both delicious and high in antioxidants.</li>
-            <li><span>Oranges</span><br>Oranges are well known for their vitamin C content. What’s more, they’re high in
+            <li><span>Oranges</span><br>Oranges are well known for their vitamin C content. What is more, they are high in
               fiber and antioxidants.</li>
             <li><span>Strawberries</span><br>Strawberries are highly nutritious and low in both carbs and calories. They
               provide vitamin C, fiber, and manganese and make a delicious dessert.</li>
@@ -250,11 +250,11 @@ $mencari = $_SESSION['id_user'];
           <p>Whole grains play an important role in your diet because they are healthy carbs and provide a variety of
             micronutrients, fiber and, fuel for your body. They may also help with weight management.</p>
           <ol>
-            <li><span>Rice</span><br>Rice is a staple food for much of the world’s population. Brown rice is more
+            <li><span>Rice</span><br>Rice is a staple food for much of the worlds population. Brown rice is more
               nutritious than white rice, with decent amounts of fiber, vitamin B1, and magnesium.</li>
             <li><span>Oats</span><br>Oats provide nutrients and powerful fibers called beta glucans. Glucans provide
               numerous benefits, including helping lower cholesterol and feed beneficial bacteria in the gut.</li>
-            <li><span>Quinoa</span><br>Quinoa is a tasty grain that’s high in nutrients such as fiber and magnesium. It
+            <li><span>Quinoa</span><br>Quinoa is a tasty grain thats high in nutrients such as fiber and magnesium. It
               is also an excellent source of plant-based protein.</li>
           </ol>
         </div>
@@ -269,12 +269,12 @@ $mencari = $_SESSION['id_user'];
           <hr>
           <p>Whole grain breads can be high in fiber and other nutrients, and are a better choice than highly processed
             white bread. When buying bread, compare product labels and look for those with the most dietary fiber and
-            the least added sugar. If you make your own bread, you’ll know exactly what goes into it. A bread making
-            machine can help if you’re not sure about baking.</p>
+            the least added sugar. If you make your own bread, youll know exactly what goes into it. A bread making
+            machine can help if youre not sure about baking.</p>
           <ol>
             <li><span>Ezekiel bread</span><br>Ezekiel bread is made from organic sprouted whole grains and legumes.</li>
-            <li><span>Homemade low-carb and gluten-free breads</span><br>If you’re looking for low-carb or gluten-free
-              breads, you might want to consider making your own. Here’s a list of 15 recipes for gluten-free, low carb
+            <li><span>Homemade low-carb and gluten-free breads</span><br>If youre looking for low-carb or gluten-free
+              breads, you might want to consider making your own. Heres a list of 15 recipes for gluten-free, low carb
               breads.</li>
           </ol>
         </div>
@@ -293,8 +293,8 @@ $mencari = $_SESSION['id_user'];
             <li><span>Green beans</span><br>Green beans, also called string beans, are an unripe variety of the common
               bean. Use them whole as a side dish or add them cold to salads.</li>
             <li><span>Kidney beans</span><br>Kidney beans contain fiber and various vitamins and minerals. Make sure to
-              cook them properly, because they’re toxic when raw.</li>
-            <li><span>Lentils</span><br>Lentils are another popular legume. They’re high in fiber and a good source of
+              cook them properly, because theyre toxic when raw.</li>
+            <li><span>Lentils</span><br>Lentils are another popular legume. Theyre high in fiber and a good source of
               plant-based protein.</li>
             <li><span>Peanuts</span><br>Peanuts hold significant importance in nutrition. These tiny legumes are
               nutritional powerhouses, serving as an excellent plant-based source of protein that supports muscle
@@ -304,7 +304,7 @@ $mencari = $_SESSION['id_user'];
               magnesium and phosphorus, promoting overall well-being. Packed with antioxidants, they play a role in
               combating oxidative stress and inflammation. Peanuts are, in fact, legumes, not true nuts. They are tasty
               and high in nutrients and antioxidants. One study has concluded that peanuts can aid in weight loss and
-              may help manage blood pressure. However, if you’re monitoring your calorie intake, you may want to be
+              may help manage blood pressure. However, if youre monitoring your calorie intake, you may want to be
               mindful of your consumption of peanut butter, which is very high in calories and easy to eat in large
               amounts.</li>
           </ol>
@@ -321,12 +321,12 @@ $mencari = $_SESSION['id_user'];
           <p>For those who can tolerate them, dairy products are a healthy source of various important nutrients.</p>
           <ol>
             <li><span>Cheese</span><br>A single slice of cheese may offer about the same amount of nutrients as an
-              entire cup (240 ml) of milk. It’s also a tasty addition to many dishes and can replace meat as a protein
+              entire cup (240 ml) of milk. Its also a tasty addition to many dishes and can replace meat as a protein
               food. However, it can be high in fat. There are many types of cheese, with different flavors and textures.
               Opt for less processed varieties of cheese.</li>
             <li><span>Dairy milk</span><br>Dairy milk contains vitamins, minerals, protein, and calcium. A 2022 review
               concluded that people who consume dairy products are less likely to die from cardiovascular disease (CVD)
-              than those who don’t. However, full-fat dairy may increase the risk of CVD and some cancers.</li>
+              than those who dont. However, full-fat dairy may increase the risk of CVD and some cancers.</li>
             <li><span>Yoghurt</span><br>Yoghurt is made from milk that is fermented through the addition of live
               bacteria. It has many of the same health effects as milk, but yoghurt with live cultures has the added
               benefit of friendly probiotic bacteria.</li>
@@ -348,7 +348,7 @@ $mencari = $_SESSION['id_user'];
               benefits.</li>
             <li><span>Coconut Oil</span><br>Coconut oil is a saturated fat, but it contains MCTs and may have similar
               health effects to olive oil. However, coconut oil has been shown to increase LDL (bad) cholesterol to a
-              greater degree than other plant-based liquid oils, so it’s best to use it in moderation.</li>
+              greater degree than other plant-based liquid oils, so its best to use it in moderation.</li>
           </ol>
         </div>
       </div>
@@ -360,8 +360,8 @@ $mencari = $_SESSION['id_user'];
         <div class="card-mentoring-text">
           <h2>Fish and Seafood</h2>
           <hr>
-          <p>Fish and other seafood can be healthy and nutritious. They’re rich in omega-3 fatty acids and iodine.
-            Research suggests that eating oily fish can boost a person’s heart and brain health.</p>
+          <p>Fish and other seafood can be healthy and nutritious. Theyre rich in omega-3 fatty acids and iodine.
+            Research suggests that eating oily fish can boost a persons heart and brain health.</p>
           <ol>
             <li><span>Salmon</span><br>Salmon is a type of oily fish that is tasty and high in nutrients, including
               protein and omega-3 fatty acids. It also contains some vitamin D.</li>
@@ -373,7 +373,7 @@ $mencari = $_SESSION['id_user'];
             <li><span>Shrimp</span><br>Shrimp is a type of crustacean related to crabs and lobsters. It tends to be low
               in fat and calories but high in protein. It also provides selenium and vitamin B12.</li>
             <li><span>Trout</span><br>Trout is another type of delicious freshwater fish, similar to salmon.</li>
-            <li><span>Tuna</span><br>Tuna tends to be low in fat and calories and high in protein. It’s perfect for
+            <li><span>Tuna</span><br>Tuna tends to be low in fat and calories and high in protein. Its perfect for
               people who need to add more protein to their diets but keep calories low. Be sure to buy low mercury
               varieties that are responsibly sourced.</li>
           </ol>
