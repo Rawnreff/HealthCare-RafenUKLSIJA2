@@ -62,7 +62,7 @@ mysqli_close($mysqli);
       <a href="daily-workouts.php" class="btn">Daily Workouts</a>
       <a href="healthy-foods.php" class="btn">Healthy Foods</a>
       <a href="sleep-programs.php" class="btn">Sleep Programs</a>
-      <a href="get-premium.php" class="btn">Get Premium?</a>
+      <a href="premium-offer.php" class="btn">Get Premium?</a>
       <div class="animation"></div>
     </div>
   </div>

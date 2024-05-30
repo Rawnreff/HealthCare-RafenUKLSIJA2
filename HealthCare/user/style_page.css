@@ -170,12 +170,21 @@ a:nth-child(5):hover~.animation {
   margin-left: -10px;
 }
 
+.banner .text-offer {
+  width: 700px;
+  box-sizing: border-box;
+}
+
 .description {
   margin-top: 10px;
   text-align: justify;
 }
 
 .banner .text span {
+  color: #569099;
+}
+
+.banner .text-offer span {
   color: #569099;
 }
 
@@ -210,7 +219,23 @@ a:nth-child(5):hover~.animation {
   transition: 0.3s;
 }
 
+.banner .text-offer a {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #569099;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
 .banner .text a:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(4px 5px 6px rgba(0, 0, 0, 0.2));
+}
+
+.banner .text-offer a:hover {
   transform: scale(1.02);
   filter: drop-shadow(4px 5px 6px rgba(0, 0, 0, 0.2));
 }
