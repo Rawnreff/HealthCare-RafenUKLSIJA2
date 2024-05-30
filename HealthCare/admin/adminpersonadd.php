@@ -1,10 +1,78 @@
 <?php
 session_start();
 
+include '../connect.php';
+
 if (isset($_POST['preferences'])) {
     $selected_preferences = $_POST['preferences'];
 } else {
     $selected_preferences = '';
+}
+
+function getUserSubscriptionPrice($username, $mysqli) {
+    $query = "SELECT plan_price FROM subscription s JOIN user u ON s.id_user = u.id_user WHERE u.username = '$username'";
+    $result = mysqli_query($mysqli, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        return $row['plan_price'];
+    } else {
+        return 0;
+    }
+}
+
+if (isset($_POST['Submit'])) {
+    $username = $_POST['username'];
+    $preferences = $_POST['preferences'];
+    $additional_preferences = $_POST['additional_preferences'];
+
+    $subscription_price = getUserSubscriptionPrice($username, $mysqli);
+
+    if ($subscription_price == 20000) {
+        $max_personalizations = 2;
+    } elseif ($subscription_price == 50000) {
+        $max_personalizations = 5;
+    } else {
+        $max_personalizations = 0;
+    }
+
+    $query = "SELECT COUNT(*) AS total_personalizations FROM personalization p JOIN user u ON p.id_user = u.id_user WHERE u.username = '$username'";
+    $result = mysqli_query($mysqli, $query);
+    $row = mysqli_fetch_assoc($result);
+    $current_personalizations = $row['total_personalizations'];
+
+    if ($current_personalizations < $max_personalizations) {
+        $id_user = getUsernameId($username, $mysqli);
+
+        if ($id_user !== null) {
+            $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user, preferences, additional_preferences)
+            VALUES('$id_user', '$preferences', '$additional_preferences')");
+
+            if ($result) {
+                header("location:adminperson.php");
+                exit();
+            } else {
+                echo "Error: " . mysqli_error($mysqli);
+            }
+        } else {
+            echo "Username not found.";
+        }
+    } else {
+        echo "Maximum personalizations reached for this subscription level.";
+    }
+}
+
+function getUsernameId($username, $mysqli)
+{
+    $query = "SELECT id_user FROM user WHERE username = '$username'";
+    $result = mysqli_query($mysqli, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        return $row['id_user'];
+    } else {
+        return null;
+    }
 }
 ?>
 
@@ -154,45 +222,6 @@ if (isset($_POST['preferences'])) {
             <button class="button" type="Submit" name="Submit">Add</button>
         </form>
     </div>
-
-    <?php
-    include_once ("../connect.php");
-
-    function getUsernameId($username, $mysqli)
-    {
-        $query = "SELECT id_user FROM user WHERE username = '$username'";
-        $result = mysqli_query($mysqli, $query);
-
-        if (mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            return $row['id_user'];
-        } else {
-            return null;
-        }
-    }
-
-    if (isset($_POST['Submit'])) {
-        $username = $_POST['username'];
-        $preferences = $_POST['preferences'];
-        $additional_preferences = $_POST['additional_preferences'];
-
-        $id_user = getUsernameId($username, $mysqli);
-
-        if ($id_user !== null) {
-            $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user,preferences,additional_preferences)
-            VALUES('$id_user','$preferences','$additional_preferences')");
-
-            if ($result) {
-                header("location:adminperson.php");
-                exit();
-            } else {
-                echo "Error: " . mysqli_error($mysqli);
-            }
-        } else {
-            echo "Username not found.";
-        }
-    }
-    ?>
 
 </body>
 

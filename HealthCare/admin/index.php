@@ -29,8 +29,8 @@
         </ul>
     </header>
     <section class="user">
-        <br><br><br><br><br><br><br><br><br><br>
-        <h1 class="heading"> Administrator Page</h1>
+        <h1 style="margin-top: 180px; margin-bottom: 20px;" class="heading"> Administrator Page</h1>
+        <a style="margin-left: 360px;" href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 

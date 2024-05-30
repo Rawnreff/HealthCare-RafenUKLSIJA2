@@ -38,7 +38,8 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Username</th>
+                <th>Username</th> 
+                <th>Preferences</th> 
                 <th>Image</th>
                 <th>Title</th>
                 <th>Information</th>
@@ -48,7 +49,7 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT a.*, u.username 
+            $query_mysql = mysqli_query($mysqli,"SELECT a.*, u.username, p.preferences
             FROM article a 
             JOIN personalization p 
             ON a.id_personalization = p.id_personalization 
@@ -60,6 +61,7 @@
                 <tr>
                     <td><?php echo $nomor++; ?></td>
                     <td><?php echo $data['username']; ?></td>
+                    <td><?php echo $data['preferences']; ?></td>
                     <td><img src="img/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>

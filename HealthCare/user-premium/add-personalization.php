@@ -1,12 +1,61 @@
 <?php
 session_start();
 
+include '../connect.php';
+
 $mencari = $_SESSION['id_user'];
 
 if(isset($_POST['preferences'])) {
     $selected_preferences = $_POST['preferences'];
 } else {
     $selected_preferences = '';
+}
+
+function getUserSubscriptionPrice($id_user, $mysqli) {
+    $query = "SELECT plan_price FROM subscription WHERE id_user = '$id_user'";
+    $result = mysqli_query($mysqli, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        return $row['plan_price'];
+    } else {
+        return 0;
+    }
+}
+
+if (isset($_POST['Submit'])) {
+    $id_user = $_SESSION['id_user'];
+    $preferences = $_POST['preferences'];
+    $additional_preferences = $_POST['additional_preferences'];
+
+    $subscription_price = getUserSubscriptionPrice($id_user, $mysqli);
+
+    if ($subscription_price == 20000) {
+        $max_personalizations = 2;
+    } elseif ($subscription_price == 50000) {
+        $max_personalizations = 5;
+    } else {
+        $max_personalizations = 0;
+    }
+
+    $query = "SELECT COUNT(*) AS total_personalizations FROM personalization WHERE id_user = '$id_user'";
+    $result = mysqli_query($mysqli, $query);
+    $row = mysqli_fetch_assoc($result);
+    $current_personalizations = $row['total_personalizations'];
+
+    if ($current_personalizations < $max_personalizations) {
+        $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user, preferences, additional_preferences)
+        VALUES('$id_user', '$preferences', '$additional_preferences')");
+
+        if ($result) {
+            header("location:personalized-page.php");
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($mysqli);
+        }
+    } else {
+        echo "Maximum personalizations reached for this subscription level.";
+    }
 }
 ?>
 
@@ -157,21 +206,6 @@ if(isset($_POST['preferences'])) {
             <button class="button" type="Submit" name="Submit">Add</button>
         </form>
     </div>
-
-    <?php
-    if (isset($_POST['Submit'])) {
-        $id_user = $_SESSION['id_user'];
-        $preferences = $_POST['preferences'];
-        $additional_preferences = $_POST['additional_preferences'];
-
-        include_once ("../connect.php");
-
-        $result = mysqli_query($mysqli, "INSERT INTO personalization(id_user,preferences,additional_preferences)
-    VALUES('$id_user','$preferences','$additional_preferences')");
-
-        header("location:personalized-page.php");
-    }
-    ?>
 
 </body>
 

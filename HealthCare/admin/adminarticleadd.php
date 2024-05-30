@@ -36,59 +36,77 @@
     </div>
 
     <?php
-    if (isset($_POST['Submit'])) {
-        $username = $_POST['username'];
-        $title = $_POST['title'];
-        $information = $_POST['information'];
-        $content = $_POST['content'];
+if (isset($_POST['Submit'])) {
+    $username = $_POST['username'];
+    $title = $_POST['title'];
+    $information = $_POST['information'];
+    $content = $_POST['content'];
 
-        if ($_FILES["image"]["error"] == 4) {
-            echo "<script> alert('Image Does Not Exist'); </script>";
+    if ($_FILES["image"]["error"] == 4) {
+        echo "<script> alert('Image Does Not Exist'); </script>";
+    } else {
+        $fileName = $_FILES["image"]["name"];
+        $fileSize = $_FILES["image"]["size"];
+        $tmpName = $_FILES["image"]["tmp_name"];
+
+        $validImageExtension = ['jpg', 'jpeg', 'png', 'webp'];
+        $imageExtension = explode('.', $fileName);
+        $imageExtension = strtolower(end($imageExtension));
+        if (!in_array($imageExtension, $validImageExtension)) {
+            echo "<script> alert('Invalid Image Extension'); </script>";
+        } else if ($fileSize > 50000000) {
+            echo "<script> alert('Image Size Is Too Large'); </script>";
         } else {
-            $fileName = $_FILES["image"]["name"];
-            $fileSize = $_FILES["image"]["size"];
-            $tmpName = $_FILES["image"]["tmp_name"];
+            $newImageName = uniqid();
+            $newImageName .= '.' . $imageExtension;
 
-            $validImageExtension = ['jpg', 'jpeg', 'png', 'webp'];
-            $imageExtension = explode('.', $fileName);
-            $imageExtension = strtolower(end($imageExtension));
-            if (!in_array($imageExtension, $validImageExtension)) {
-                echo "<script> alert('Invalid Image Extension'); </script>";
-            } else if ($fileSize > 50000000) {
-                echo "<script> alert('Image Size Is Too Large'); </script>";
+            move_uploaded_file($tmpName, 'img/' . $newImageName);
+
+            include_once ("../connect.php");
+
+            $user_query = mysqli_query($mysqli, "SELECT id_user FROM user WHERE username = '$username'");
+            $user_row = mysqli_fetch_assoc($user_query);
+            $id_user = $user_row['id_user'];
+
+            $query_check_personalization = "SELECT COUNT(id_personalization) AS count_personalization 
+                                            FROM personalization 
+                                            WHERE id_user = '$id_user'";
+            $result_check_personalization = mysqli_query($mysqli, $query_check_personalization);
+            $row_check_personalization = mysqli_fetch_assoc($result_check_personalization);
+            $count_personalization = $row_check_personalization['count_personalization'];
+
+            if ($count_personalization > 1) {
+                $query_get_unused_personalization = "SELECT p.id_personalization 
+                                                        FROM personalization p 
+                                                        LEFT JOIN article a ON p.id_personalization = a.id_personalization 
+                                                        WHERE p.id_user = '$id_user' 
+                                                        GROUP BY p.id_personalization 
+                                                        HAVING COUNT(a.id_personalization) < 2";
+                $result_get_unused_personalization = mysqli_query($mysqli, $query_get_unused_personalization);
+                $row_get_unused_personalization = mysqli_fetch_assoc($result_get_unused_personalization);
+                $id_personalization = $row_get_unused_personalization['id_personalization'];
             } else {
-                $newImageName = uniqid();
-                $newImageName .= '.' . $imageExtension;
+                $query_get_personalization = "SELECT id_personalization 
+                                                FROM personalization 
+                                                WHERE id_user = '$id_user'";
+                $result_get_personalization = mysqli_query($mysqli, $query_get_personalization);
+                $row_get_personalization = mysqli_fetch_assoc($result_get_personalization);
+                $id_personalization = $row_get_personalization['id_personalization'];
+            }
 
-                move_uploaded_file($tmpName, 'img/' . $newImageName);
+            $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
+                            VALUES('$id_personalization','$newImageName','$title','$information','$content')";
+            $result_insert = mysqli_query($mysqli, $query_insert);
 
-                include_once ("../connect.php");
-
-                $user_query = mysqli_query($mysqli, "SELECT id_user FROM user WHERE username = '$username'");
-                $user_row = mysqli_fetch_assoc($user_query);
-                $id_user = $user_row['id_user'];
-
-                $query = "SELECT p.id_personalization 
-                FROM personalization p 
-                JOIN user u ON p.id_user = u.id_user 
-                WHERE u.id_user = '$id_user'";
-                $result = mysqli_query($mysqli, $query);
-                $row = mysqli_fetch_assoc($result);
-                $id_personalization = $row['id_personalization'];
-
-                $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
-                             VALUES('$id_personalization','$newImageName','$title','$information','$content')";
-                $result_insert = mysqli_query($mysqli, $query_insert);
-
-                if ($result_insert) {
-                    header("location:adminarticle.php");
-                } else {
-                    echo "<script> alert('Failed to add article'); </script>";
-                }
+            if ($result_insert) {
+                header("location:adminarticle.php");
+            } else {
+                echo "<script> alert('Failed to add article'); </script>";
             }
         }
     }
-    ?>
+}
+?>
 
 </body>
 
