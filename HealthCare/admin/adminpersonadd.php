@@ -1,10 +1,10 @@
 <?php
-session_start
+session_start();
 
 if(isset($_POST['preferences'])) {
     $selected_preferences = $_POST['preferences'];
 } else {
-    $selected_preferences = ''; // default value if preferences are not selected
+    $selected_preferences = '';
 }
 ?>
 
