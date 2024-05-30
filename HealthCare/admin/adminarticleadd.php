@@ -69,9 +69,9 @@
                 $id_user = $user_row['id_user'];
 
                 $query = "SELECT p.id_personalization 
-                      FROM personalization p 
-                      JOIN user u ON p.id_user = u.id_user 
-                      WHERE u.id_user = '$id_user'";
+                FROM personalization p 
+                JOIN user u ON p.id_user = u.id_user 
+                WHERE u.id_user = '$id_user'";
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_assoc($result);
                 $id_personalization = $row['id_personalization'];

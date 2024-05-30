@@ -49,9 +49,8 @@
             <?php
             include '../connect.php';
             $query_mysql = mysqli_query($mysqli, "SELECT subscription.*, user.username 
-                                                  FROM subscription 
-                                                  JOIN user ON subscription.id_user = user.id_user")
-                or die(mysqli_error($mysqli));
+            FROM subscription 
+            JOIN user ON subscription.id_user = user.id_user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>

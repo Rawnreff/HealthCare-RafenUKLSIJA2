@@ -12,11 +12,11 @@ if (isset($_POST['update'])) {
     $result = mysqli_query($mysqli, $query);
 
     if ($result) {
-        echo "Data berhasil diperbarui.";
+        echo "Data updated.";
         header("Location: adminuser.php");
         exit();
     } else {
-        echo "Terjadi kesalahan: " . mysqli_error($mysqli);
+        echo "Something wrong: " . mysqli_error($mysqli);
     }
 }
 
@@ -26,10 +26,11 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($mysqli, $query);
     $data = mysqli_fetch_assoc($result);
 } else {
-    echo "ID user tidak ditemukan.";
+    echo "Id User not found.";
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

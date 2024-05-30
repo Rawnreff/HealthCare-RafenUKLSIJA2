@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
         $plan_name = $_POST['plan_name'];
         $plan_price = $_POST['plan_price'];
         $status = $_POST['status'];
-        $activation_date = $_POST['activation_date']; // Tambahkan activation_date
+        $activation_date = $_POST['activation_date'];
 
         $query = "UPDATE subscription SET plan_name='$plan_name', plan_price='$plan_price', status='$status', activation_date='$activation_date' WHERE id_subscription='$id_subscription'";
         $result = mysqli_query($mysqli, $query);
@@ -52,7 +52,6 @@ if (isset($_GET['id'])) {
         </header>
         <section class="form">
             <form method="POST" action="">
-
                 <label for="plan_name">Plan Name:</label><br>
                 <select required id="plan_name" name="plan_name" value="<?php echo $data['plan_name']; ?>">
                     <option value="free plan" <?php if ($data['plan_name'] == 'free plan') echo 'selected'; ?>>Free Plan</option>

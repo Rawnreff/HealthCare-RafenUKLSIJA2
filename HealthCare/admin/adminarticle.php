@@ -49,11 +49,11 @@
             <?php
             include '../connect.php';
             $query_mysql = mysqli_query($mysqli, "SELECT a.*, u.username 
-                                                FROM article a 
-                                                JOIN personalization p 
-                                                ON a.id_personalization = p.id_personalization 
-                                                JOIN user u 
-                                                ON p.id_user = u.id_user") or die(mysqli_error($mysqli));
+            FROM article a 
+            JOIN personalization p 
+            ON a.id_personalization = p.id_personalization 
+            JOIN user u 
+            ON p.id_user = u.id_user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>

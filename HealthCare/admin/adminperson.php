@@ -47,9 +47,8 @@
             <?php
             include '../connect.php';
             $query_mysql = mysqli_query($mysqli, "SELECT personalization.*, user.username 
-                                                  FROM personalization 
-                                                  JOIN user ON personalization.id_user = user.id_user")
-                or die(mysqli_error($mysqli));
+            FROM personalization 
+            JOIN user ON personalization.id_user = user.id_user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
