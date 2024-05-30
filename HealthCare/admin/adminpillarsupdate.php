@@ -76,11 +76,11 @@ if (isset($_GET['id'])) {
         <section class="form">
             <form method="POST" action="" enctype="multipart/form-data">
 
-                <label for="type">Type:</label>
-            <select name="type" required>
-                <option value="sleep_programs">Sleep Programs</option>
-                <option value="daily_workouts">Daily Workouts</option>
-                <option value="healthy_foods">Healthy Foods</option>
+            <label for="type">Type:</label>
+            <select name="type" value="<?php echo $data['type']; ?>" required>
+                <option value="daily_workouts" <?php if ($data['type'] == 'daily_workouts') echo 'selected'; ?>>Daily Workouts</option>
+                <option value="healthy_foods" <?php if ($data['type'] == 'healthy_foods') echo 'selected'; ?>>Healthy Foods</option>
+                <option value="sleep_programs" <?php if ($data['type'] == 'sleep_programs') echo 'selected'; ?>>Sleep Programs</option>
             </select><br>
 
                 <label for="image">Image:</label><br>

@@ -19,9 +19,9 @@
             
             <label for="type">Type:</label>
             <select name="type" required>
-                <option value="sleep_programs">Sleep Programs</option>
                 <option value="daily_workouts">Daily Workouts</option>
                 <option value="healthy_foods">Healthy Foods</option>
+                <option value="sleep_programs">Sleep Programs</option>
             </select><br>
 
             <label for="image">Image:</label>

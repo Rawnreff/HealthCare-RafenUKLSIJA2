@@ -63,7 +63,13 @@ if (isset($_GET['id'])) {
                 <input type="text" id="username" name="username" value="<?php echo $data['username']; ?>"><br>
 
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" value="<?php echo $data['password']; ?>"><br><br>
+                <input type="password" id="password" name="password" value="<?php echo $data['password']; ?>"><br>
+
+                <label for="level">Level:</label>
+                <select name="level" value="<?php echo $data['level']?>" required>
+                    <option value="user" <?php if ($data['level'] == 'user') echo 'selected'; ?>>User</option>
+                    <option value="admin" <?php if ($data['level'] == 'admin') echo 'selected'; ?>>Admin</option>
+                </select><br><br>
 
                 <input type="submit" name="update" value="Update" class="button">
             </form>

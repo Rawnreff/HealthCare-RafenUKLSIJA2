@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
                 </select>
 
                 <label for="activation_date">Activation Date:</label><br>
-                <input type="date" id="activation_date" name="activation_date" value="<?php echo $data['activation_date']; ?>" required>
+                <input style="margin-top: 8px;" type="date" id="activation_date" name="activation_date" value="<?php echo $data['activation_date']; ?>" required>
 
                 <br><br>
 
