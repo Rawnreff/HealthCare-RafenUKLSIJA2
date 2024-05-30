@@ -28,7 +28,7 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
             <label for="email">E-mail:</label>
             <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required><br>
 
-            <label for="username">Username (Maximum 10 Characters):</label>
+            <label for="username">Username:</label>
             <input type="text" name="username" value="<?php echo htmlspecialchars($username); ?>" required><br>
 
             <label for="password">Password:</label>
@@ -56,25 +56,21 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
 
         include_once ("connect.php");
 
-        // Periksa apakah username sudah ada dalam database
         $check_username_query = "SELECT * FROM user WHERE username = '$username'";
         $check_username_result = mysqli_query($mysqli, $check_username_query);
         $username_exists = mysqli_num_rows($check_username_result) > 0;
 
-        // Periksa apakah email sudah ada dalam database
         $check_email_query = "SELECT * FROM user WHERE email = '$email'";
         $check_email_result = mysqli_query($mysqli, $check_email_query);
         $email_exists = mysqli_num_rows($check_email_result) > 0;
 
         if ($username_exists && $email_exists) {
-            // Jika username dan email sudah ada
             echo "<script>alert('Both username and email have been used');</script>";
             $_SESSION['name'] = $name;
             $_SESSION['password'] = $password;
             header("location:register.php");
             exit();
         } elseif ($username_exists) {
-            // Jika hanya username yang sudah ada
             echo "<script>alert('The username has been used');</script>";
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
@@ -82,7 +78,6 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
             header("location:register.php");
             exit();
         } elseif ($email_exists) {
-            // Jika hanya email yang sudah ada
             echo "<script>alert('The email has been used');</script>";
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
@@ -90,7 +85,6 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
             header("location:register.php");
             exit();
         } else {
-            // Jika username dan email belum ada, lanjutkan proses registrasi
             $result = mysqli_query($mysqli, "INSERT INTO user(name,email,username,password,level) VALUES('$name','$email','$username','$password','$level')");
 
             if ($result) {
@@ -112,7 +106,6 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
         }
     }
     ?>
-
 
 </body>
 
