@@ -255,10 +255,24 @@ a:nth-child(5):hover~.animation {
   margin-top: 50px;
 }
 
+.gap-card {
+  height: 50px;
+}
+
 .card {
   display: flex;
-  margin-top: 20px;
   margin-left: 110px;
+}
+
+a .card-img:hover {
+  transform: scale(1.07);
+  transition: 0.5s;
+}
+
+.image a img:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+  opacity: 0.9;
 }
 
 .card .card-img {

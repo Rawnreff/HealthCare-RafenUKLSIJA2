@@ -90,7 +90,15 @@ mysqli_close($mysqli);
         </tr>
         <tr>
           <th>Current Plan</th>
-          <td><?php echo $subsData['plan_name']; ?></td>
+          <td>
+          <?php
+          if ($subsData['status'] === 'inactive') {
+            echo 'free plan';
+          } else {
+            echo $subsData['plan_name'];
+          }
+          ?> 
+          </td>
         </tr>
       </table>
       <a href="../loginpage.php">Log Out</a>

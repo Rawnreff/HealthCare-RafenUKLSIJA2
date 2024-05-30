@@ -68,6 +68,7 @@ $mencari = $_SESSION['id_user'];
           <p>There are various tips and guidelines for you to lead a healthy lifestyle.</p>
         </div>
       </div>
+      <div class="gap-card"></div>
       <div class="card">
         <a href="https://youtu.be/3sEeVJEXTfY?si=0HvfyzHANqEgaoWB">
           <img class="card-img" src="image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
