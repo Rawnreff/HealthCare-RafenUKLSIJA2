@@ -93,6 +93,7 @@ mysqli_close($mysqli);
           <td><?php echo $subsData['plan_name']; ?></td>
         </tr>
       </table>
+      <a href="../loginpage.php">Log Out</a>
       <a href="edit-profile.php?id=<?php echo $userData['id_user']; ?>">Edit Profile</a>
     </div>
   </div>
@@ -104,7 +105,7 @@ mysqli_close($mysqli);
     </div>
     <div class="footer-bot">
       <div class="profile-navigation">
-        <a href="../loginpage.php" class="profile-link">Log Out</a>
+        <a href="index.php" class="profile-link">Home</a>
         <span>|</span>
         <a href="https://www.instagram.com/raffortless/" class="profile-link">Instagram</a>
       </div>

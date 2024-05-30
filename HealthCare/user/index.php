@@ -60,17 +60,21 @@ $mencari = $_SESSION['id_user'];
   <div class="superior">
     <div class="superior-text">
       <div class="card">
-        <img class="card-img" src="image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
+        <a href="https://youtu.be/IrWwEr5n4eE?si=1DYBOz_F8z3atIif">
+          <img class="card-img" src="image/76bf36b24ae49ed25ee943280fc91699.jpg" alt="">
+        </a>
         <div class="card-text">
           <h3>Recommendations and Mentoring</h3>
-          <p>There are various recommendations and guidelines for you to lead a healthy lifestyle.</p>
+          <p>There are various tips and guidelines for you to lead a healthy lifestyle.</p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img" src="image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
+        <a href="https://youtu.be/3sEeVJEXTfY?si=0HvfyzHANqEgaoWB">
+          <img class="card-img" src="image/Ilustrasi-by-Halodoc-scaled.jpg" alt="">
+        </a>
         <div class="card-text">
           <h3>Tutorial Video</h3>
-          <p>There are various tutorial videos to support your progress in adopting a healthy lifestyle.</p>
+          <p>There are various tutorial videos to support your progress in adopting a good workouts habit.</p>
         </div>
       </div>
     </div>
@@ -87,9 +91,15 @@ $mencari = $_SESSION['id_user'];
       </h2>
       <hr>
       <div class="image">
-        <img src="image/workout.jpg" alt="" />
-        <img src="image/healthy_breakfast.jpg" alt="" />
-        <img src="image/sleep.jpg" alt="" />
+        <a href="daily-workouts.php">
+          <img src="image/workout.jpg" alt="" />
+        </a>
+        <a href="healthy-foods.php">
+          <img src="image/healthy_breakfast.jpg" alt="" />
+        </a>
+        <a href="sleep-programs.php">
+          <img src="image/sleep.jpg" alt="" />
+        </a>
       </div>
     </div>
   </div>
