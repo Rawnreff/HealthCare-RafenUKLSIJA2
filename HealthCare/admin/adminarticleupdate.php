@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
         $information = $_POST['information'];
         $content = $_POST['content'];
 
-        $image = $_POST['image'];
+        $image = $_POST['existing_image'];
         if ($_FILES["image"]["error"] == 4) {
             $newImageName = $image;
         } else {
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
             $fileSize = $_FILES["image"]["size"];
             $tmpName = $_FILES["image"]["tmp_name"];
 
-            $validImageExtension = ['jpg', 'jpeg', 'png', 'webp'];
+            $validImageExtension = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
             $imageExtension = explode('.', $fileName);
             $imageExtension = strtolower(end($imageExtension));
             if (!in_array($imageExtension, $validImageExtension)) {
@@ -76,10 +76,10 @@ if (isset($_GET['id'])) {
             <form method="POST" action="" enctype="multipart/form-data">
 
                 <label for="image">Image:</label><br>
-                <input style="margin-top: 8px;" type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp"><br><br>
+                <input style="margin-top: 8px;" type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp, .gif"><br><br>
 
                 <label for="title">Title:</label><br>
-                <input type="text" name="title" value="<?php echo $data['title']; ?>">
+                <input type="text" name="title" value="<?php echo htmlspecialchars($data['title'], ENT_QUOTES, 'UTF-8'); ?>">
 
                 <label for="information">Information:</label>
                 <textarea style="height:40px; width:395px; margin-top: 10px; margin-bottom: 6px;" name="information"><?php echo htmlspecialchars($data['information'], ENT_QUOTES, 'UTF-8'); ?></textarea>

@@ -20,7 +20,7 @@
             <input type="text" name="username" required><br>
 
             <label for="image">Image:</label>
-            <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp" required><br>
+            <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp, .gif" required><br>
 
             <label for="title">Title:</label>
             <input type="text" name="title" required><br>
@@ -49,7 +49,7 @@ if (isset($_POST['Submit'])) {
         $fileSize = $_FILES["image"]["size"];
         $tmpName = $_FILES["image"]["tmp_name"];
 
-        $validImageExtension = ['jpg', 'jpeg', 'png', 'webp'];
+        $validImageExtension = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
         $imageExtension = explode('.', $fileName);
         $imageExtension = strtolower(end($imageExtension));
         if (!in_array($imageExtension, $validImageExtension)) {

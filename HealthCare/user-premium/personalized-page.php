@@ -121,7 +121,7 @@ $mencari = $_SESSION['id_user'];
                 </tr>
                 <tr>
                   <td>
-                    <p><span><?php echo $data['information']; ?></span></p>
+                    <p><?php echo $data['information']; ?></p>
                   </td>
                 </tr>
                 <tr>
