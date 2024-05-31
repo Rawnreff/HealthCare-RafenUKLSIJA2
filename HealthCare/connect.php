@@ -1,8 +1,8 @@
 <?php
 $databaseHost = "localhost";
-$databaseName = "healthcare";
 $databaseUsername = "root";
 $databasePassword = "";
+$databaseName = "healthcare";
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 if ($mysqli) {
     echo "";
