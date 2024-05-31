@@ -2,7 +2,6 @@
 $databaseHost = "localhost";
 $databaseName = "healthcare";
 $databaseUsername = "root";
-$databaseEmail = "";
 $databasePassword = "";
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 if ($mysqli) {
