@@ -38,8 +38,8 @@
         <table border="1" class="table">
             <tr>
                 <th>No.</th>
-                <th>Username</th> 
-                <th>Preferences</th> 
+                <th>Username</th>
+                <th>Preferences</th>
                 <th>Image</th>
                 <th>Title</th>
                 <th>Information</th>
