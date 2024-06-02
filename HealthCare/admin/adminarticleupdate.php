@@ -8,6 +8,7 @@ if (isset($_GET['id'])) {
         $title = $_POST['title'];
         $information = $_POST['information'];
         $content = $_POST['content'];
+        $preferences_type = $_POST['preferences_type'];
 
         $image = $_POST['existing_image'];
         if ($_FILES["image"]["error"] == 4) {
@@ -32,7 +33,7 @@ if (isset($_GET['id'])) {
             }
         }
 
-        $query = "UPDATE article SET image='$newImageName', title='$title', information='$information', content='$content' WHERE id_article='$id_article'";
+        $query = "UPDATE article SET image='$newImageName', title='$title', information='$information', content='$content', preferences_type='$preferences_type' WHERE id_article='$id_article'";
         $result = mysqli_query($mysqli, $query);
 
         if ($result) {
@@ -74,6 +75,22 @@ if (isset($_GET['id'])) {
         </header>
         <section class="form">
             <form method="POST" action="" enctype="multipart/form-data">
+
+                <label for="preferences_type">Preferences Type:</label>
+                <select name="preferences_type" id="preferences_type" required>
+                    <option value="cardio" <?= $data['preferences_type'] == 'cardio' ? 'selected' : '' ?>>Cardio</option>
+                    <option value="strength training" <?= $data['preferences_type'] == 'strength training' ? 'selected' : '' ?>>Strength Training</option>
+                    <option value="flexibility" <?= $data['preferences_type'] == 'flexibility' ? 'selected' : '' ?>>Flexibility</option>
+                    <option value="balance" <?= $data['preferences_type'] == 'balance' ? 'selected' : '' ?>>Balance</option>
+                    <option value="hiit" <?= $data['preferences_type'] == 'hiit' ? 'selected' : '' ?>>High-intensity interval training</option>
+                    <option value="low-impact exercises" <?= $data['preferences_type'] == 'low-impact exercises' ? 'selected' : '' ?>>Low-Impact Exercises</option>
+                    <option value="mind-body exercises" <?= $data['preferences_type'] == 'mind-body exercises' ? 'selected' : '' ?>>Mind-Body Exercises</option>
+                    <option value="endurance training" <?= $data['preferences_type'] == 'endurance training' ? 'selected' : '' ?>>Endurance Training</option>
+                    <option value="core strengthening" <?= $data['preferences_type'] == 'core strengthening' ? 'selected' : '' ?>>Core Strengthening</option>
+                    <option value="stretching" <?= $data['preferences_type'] == 'stretching' ? 'selected' : '' ?>>Stretching</option>
+                    <option value="pilates" <?= $data['preferences_type'] == 'pilates' ? 'selected' : '' ?>>Pilates</option>
+                    <option value="yoga" <?= $data['preferences_type'] == 'yoga' ? 'selected' : '' ?>>Yoga</option>
+                </select><br>
 
                 <label for="image">Image:</label><br>
                 <input style="margin-top: 8px;" type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .webp, .gif"><br><br>

@@ -42,7 +42,6 @@ unset($_SESSION['name'], $_SESSION['email'], $_SESSION['username'], $_SESSION['p
     </div>
 
     <?php
-
     if (isset($_POST['Submit'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];

@@ -39,7 +39,7 @@
             <tr>
                 <th>No.</th>
                 <th>Username</th>
-                <th>Preferences</th>
+                <th>Preferences Type</th>
                 <th>Image</th>
                 <th>Title</th>
                 <th>Information</th>
@@ -49,7 +49,7 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli,"SELECT a.*, u.username, p.preferences
+            $query_mysql = mysqli_query($mysqli,"SELECT a.*, u.username
             FROM article a 
             JOIN personalization p 
             ON a.id_personalization = p.id_personalization 
@@ -57,11 +57,11 @@
             ON p.id_user = u.id_user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while ($data = mysqli_fetch_array($query_mysql)) {
-                ?>
+            ?>
                 <tr>
                     <td><?php echo $nomor++; ?></td>
                     <td><?php echo $data['username']; ?></td>
-                    <td><?php echo $data['preferences']; ?></td>
+                    <td><?php echo $data['preferences_type']; ?></td>
                     <td><img src="img/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>

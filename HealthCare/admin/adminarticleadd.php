@@ -65,43 +65,61 @@ if (isset($_POST['Submit'])) {
             include_once ("../connect.php");
 
             $user_query = mysqli_query($mysqli, "SELECT id_user FROM user WHERE username = '$username'");
-            $user_row = mysqli_fetch_assoc($user_query);
-            $id_user = $user_row['id_user'];
+            if ($user_query && mysqli_num_rows($user_query) > 0) {
+                $user_row = mysqli_fetch_assoc($user_query);
+                $id_user = $user_row['id_user'];
 
-            $query_check_personalization = "SELECT COUNT(id_personalization) AS count_personalization 
-                                            FROM personalization 
-                                            WHERE id_user = '$id_user'";
-            $result_check_personalization = mysqli_query($mysqli, $query_check_personalization);
-            $row_check_personalization = mysqli_fetch_assoc($result_check_personalization);
-            $count_personalization = $row_check_personalization['count_personalization'];
-
-            if ($count_personalization > 1) {
-                $query_get_unused_personalization = "SELECT p.id_personalization 
-                                                        FROM personalization p 
-                                                        LEFT JOIN article a ON p.id_personalization = a.id_personalization 
-                                                        WHERE p.id_user = '$id_user' 
-                                                        GROUP BY p.id_personalization 
-                                                        HAVING COUNT(a.id_personalization) < 2";
-                $result_get_unused_personalization = mysqli_query($mysqli, $query_get_unused_personalization);
-                $row_get_unused_personalization = mysqli_fetch_assoc($result_get_unused_personalization);
-                $id_personalization = $row_get_unused_personalization['id_personalization'];
-            } else {
-                $query_get_personalization = "SELECT id_personalization 
+                $query_check_personalization = "SELECT COUNT(id_personalization) AS count_personalization 
                                                 FROM personalization 
                                                 WHERE id_user = '$id_user'";
-                $result_get_personalization = mysqli_query($mysqli, $query_get_personalization);
-                $row_get_personalization = mysqli_fetch_assoc($result_get_personalization);
-                $id_personalization = $row_get_personalization['id_personalization'];
-            }
+                $result_check_personalization = mysqli_query($mysqli, $query_check_personalization);
+                if ($result_check_personalization && mysqli_num_rows($result_check_personalization) > 0) {
+                    $row_check_personalization = mysqli_fetch_assoc($result_check_personalization);
+                    $count_personalization = $row_check_personalization['count_personalization'];
 
-            $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
-                            VALUES('$id_personalization','$newImageName','$title','$information','$content')";
-            $result_insert = mysqli_query($mysqli, $query_insert);
+                    if ($count_personalization > 1) {
+                        $query_get_unused_personalization = "SELECT p.id_personalization 
+                                                            FROM personalization p 
+                                                            LEFT JOIN article a ON p.id_personalization = a.id_personalization 
+                                                            WHERE p.id_user = '$id_user' 
+                                                            GROUP BY p.id_personalization 
+                                                            HAVING COUNT(a.id_personalization) < 2";
+                        $result_get_unused_personalization = mysqli_query($mysqli, $query_get_unused_personalization);
+                        if ($result_get_unused_personalization && mysqli_num_rows($result_get_unused_personalization) > 0) {
+                            $row_get_unused_personalization = mysqli_fetch_assoc($result_get_unused_personalization);
+                            $id_personalization = $row_get_unused_personalization['id_personalization'];
+                        } else {
+                            echo "<script> alert('Maximum articles amount reached'); </script>";
+                            exit();
+                        }
+                    } else {
+                        $query_get_personalization = "SELECT id_personalization 
+                                                    FROM personalization 
+                                                    WHERE id_user = '$id_user'";
+                        $result_get_personalization = mysqli_query($mysqli, $query_get_personalization);
+                        if ($result_get_personalization && mysqli_num_rows($result_get_personalization) > 0) {
+                            $row_get_personalization = mysqli_fetch_assoc($result_get_personalization);
+                            $id_personalization = $row_get_personalization['id_personalization'];
+                        } else {
+                            echo "<script> alert('Personalization not found'); </script>";
+                            exit();
+                        }
+                    }
 
-            if ($result_insert) {
-                header("location:adminarticle.php");
+                    $query_insert = "INSERT INTO article(id_personalization,image,title,information,content)
+                                    VALUES('$id_personalization','$newImageName','$title','$information','$content')";
+                    $result_insert = mysqli_query($mysqli, $query_insert);
+
+                    if ($result_insert) {
+                        header("location:adminarticle.php");
+                    } else {
+                        echo "<script> alert('Failed to add article'); </script>";
+                    }
+                } else {
+                    echo "<script> alert('Failed to check personalization count'); </script>";
+                }
             } else {
-                echo "<script> alert('Failed to add article'); </script>";
+                echo "<script> alert('User not found'); </script>";
             }
         }
     }

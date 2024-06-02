@@ -45,15 +45,62 @@
         $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $level = $_POST['level'];
-        echo ($password);
+        $level = 'user';
+        $plan_name = 'free plan';
+        $plan_price = '0';
+        $status = 'active';
+        $activation_date = date('Y-m-d');
 
         include_once ("../connect.php");
 
-        $result = mysqli_query($mysqli, "INSERT INTO user(name,email,username,password,level)
-    VALUES('$name','$email','$username','$password','$level')");
+        $check_username_query = "SELECT * FROM user WHERE username = '$username'";
+        $check_username_result = mysqli_query($mysqli, $check_username_query);
+        $username_exists = mysqli_num_rows($check_username_result) > 0;
 
-        header("location:adminuser.php");
+        $check_email_query = "SELECT * FROM user WHERE email = '$email'";
+        $check_email_result = mysqli_query($mysqli, $check_email_query);
+        $email_exists = mysqli_num_rows($check_email_result) > 0;
+
+        if ($username_exists && $email_exists) {
+            echo "<script>alert('Both username and email have been used');</script>";
+            $_SESSION['name'] = $name;
+            $_SESSION['password'] = $password;
+            header("location:register.php");
+            exit();
+        } elseif ($username_exists) {
+            echo "<script>alert('The username has been used');</script>";
+            $_SESSION['name'] = $name;
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            header("location:register.php");
+            exit();
+        } elseif ($email_exists) {
+            echo "<script>alert('The email has been used');</script>";
+            $_SESSION['name'] = $name;
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            header("location:register.php");
+            exit();
+        } else {
+            $result = mysqli_query($mysqli, "INSERT INTO user(name,email,username,password,level) VALUES('$name','$email','$username','$password','$level')");
+
+            if ($result) {
+                $id_user = mysqli_insert_id($mysqli);
+
+                $subscription_result = mysqli_query($mysqli, "INSERT INTO subscription(id_user, plan_name, plan_price, status, activation_date) VALUES('$id_user', '$plan_name', '$plan_price', '$status','$activation_date')");
+
+                if ($subscription_result) {
+                    echo "Data berhasil ditambahkan ke tabel subscription";
+                } else {
+                    echo "Gagal menambahkan data ke tabel subscription: " . mysqli_error($mysqli);
+                }
+            } else {
+                echo "Gagal menambahkan data ke tabel user: " . mysqli_error($mysqli);
+            }
+
+            header("location:adminuser.php");
+            exit();
+        }
     }
     ?>
 

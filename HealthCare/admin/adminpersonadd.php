@@ -5,8 +5,29 @@ include '../connect.php';
 
 if (isset($_POST['preferences'])) {
     $selected_preferences = $_POST['preferences'];
+    $_SESSION['selected_preferences'] = $selected_preferences;
+} else if (isset($_SESSION['selected_preferences'])) {
+    $selected_preferences = $_SESSION['selected_preferences'];
 } else {
     $selected_preferences = '';
+}
+
+if (isset($_POST['username'])) {
+    $username = $_POST['username'];
+    $_SESSION['username'] = $username;
+} else if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    $username = '';
+}
+
+if (isset($_POST['additional_preferences'])) {
+    $additional_preferences = $_POST['additional_preferences'];
+    $_SESSION['additional_preferences'] = $additional_preferences;
+} else if (isset($_SESSION['additional_preferences'])) {
+    $additional_preferences = $_SESSION['additional_preferences'];
+} else {
+    $additional_preferences = '';
 }
 
 function getUserSubscriptionPrice($username, $mysqli) {
@@ -49,6 +70,10 @@ if (isset($_POST['Submit'])) {
             VALUES('$id_user', '$preferences', '$additional_preferences')");
 
             if ($result) {
+                unset($_SESSION['username']);
+                unset($_SESSION['selected_preferences']);
+                unset($_SESSION['additional_preferences']);
+                
                 header("location:adminperson.php");
                 exit();
             } else {
@@ -96,7 +121,7 @@ function getUsernameId($username, $mysqli)
         <form class="form" action="adminpersonadd.php" method="post">
 
             <label for="username">Username:</label>
-            <input type="text" name="username" required><br>
+            <input type="text" name="username" value="<?php echo htmlspecialchars($username); ?>" required><br>
 
             <label for="preferences">Preferences:</label>
             <select name="preferences" id="preferences" onchange="this.form.submit()" required>
