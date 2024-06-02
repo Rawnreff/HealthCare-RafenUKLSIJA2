@@ -49,8 +49,7 @@ $mencari = $_SESSION['id_user'];
                 <th>No.</th>
                 <th>Preferences</th>
                 <th>Additional Preferences</th>
-                <th>Action</th>
-                <th>Action</th>
+                <th>Edit</th>
             </tr>
             <?php
             include '../connect.php';
@@ -62,8 +61,7 @@ $mencari = $_SESSION['id_user'];
                     <td><?php echo $nomor++; ?></td>
                     <td><?php echo $data['preferences']; ?></td>
                     <td><?php echo $data['additional_preferences']; ?></td>
-                    <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>">Delete</a> </td>
-                    <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>">Edit</a> </td>
+                    <td><a href="person-edit.php?id=<?php echo $data['id_personalization']; ?>">Edit</a> </td>
                 </tr>
             <?php } ?>
         </table>
