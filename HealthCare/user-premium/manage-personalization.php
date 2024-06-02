@@ -44,7 +44,7 @@ $mencari = $_SESSION['id_user'];
       <a href="add-personalization.php">Add Personalization</a>
     </div>
     <div class="table-person">
-        <table border="1" class="table">
+        <table border="1" class="table-person">
             <tr>
                 <th>No.</th>
                 <th>Preferences</th>
