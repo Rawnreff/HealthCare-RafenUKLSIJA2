@@ -67,10 +67,13 @@ $mencari = $_SESSION['id_user'];
   <div class="wrap-mentoring">
     <?php
     include '../connect.php';
-    $query_mysql = mysqli_query($mysqli, "SELECT article.* FROM article 
-                                          INNER JOIN personalization 
-                                          ON article.id_personalization = personalization.id_personalization 
-                                          WHERE personalization.id_user = $mencari") or die(mysqli_error($mysqli));
+    $query_mysql = mysqli_query($mysqli, "SELECT article.*
+    FROM article 
+    LEFT JOIN personalization 
+    ON article.preferences_type = personalization.preferences AND personalization.id_user = $mencari
+    WHERE personalization.id_user = $mencari OR personalization.id_user IS NULL
+    ") or die(mysqli_error($mysqli));
+
     $articles = [];
     while ($data = mysqli_fetch_array($query_mysql)) {
       $articles[] = $data;
