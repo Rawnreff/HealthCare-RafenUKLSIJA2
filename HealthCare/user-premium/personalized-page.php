@@ -71,7 +71,7 @@ $mencari = $_SESSION['id_user'];
     FROM article 
     LEFT JOIN personalization 
     ON article.preferences_type = personalization.preferences AND personalization.id_user = $mencari
-    WHERE personalization.id_user = $mencari OR personalization.id_user IS NULL
+    WHERE personalization.id_user = $mencari
     ") or die(mysqli_error($mysqli));
 
     $articles = [];
