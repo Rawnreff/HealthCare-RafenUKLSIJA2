@@ -6,6 +6,16 @@ if(isset($_POST['preferences'])) {
 } else {
     $selected_preferences = '';
 }
+
+if(isset($_POST['plan_price'])) {
+    $_SESSION['selected_plan_price'] = $_POST['plan_price'];
+} 
+
+if (!isset($_SESSION['selected_plan_price'])) {
+    $_SESSION['selected_plan_price'] = '20000';
+}
+
+$selected_plan_price = $_SESSION['selected_plan_price'];
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +33,10 @@ if(isset($_POST['preferences'])) {
         <h1 class="title"><?php echo $_SESSION['username']; ?>'s Premium Registration</h1>
         <form class="form" action="get-premium.php" method="post">
 
-            <label for="plan_price">Choose Price:</label>
+        <label for="plan_price">Choose Price:</label>
             <select name="plan_price" required>
-                <option value="20000">Rp20.000,-</option>
-                <option value="50000">Rp50.000,-</option>
+                <option value="20000" <?php if($selected_plan_price == '20000') echo 'selected'; ?>>Rp20.000,-</option>
+                <option value="50000" <?php if($selected_plan_price == '50000') echo 'selected'; ?>>Rp50.000,-</option>
             </select><br>
             
             <label for="preferences">Preferences:</label>
