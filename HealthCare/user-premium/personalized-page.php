@@ -61,7 +61,7 @@ $mencari = $_SESSION['id_user'];
     <h2><?php echo $_SESSION['username']; ?>'s personalized contents</h2>
     <hr>
     <div class="add-person">
-      <a href="add-personalization.php" class="add-person">Add Personalization</a>
+      <a href="manage-personalization.php" class="add-person">Manage Personalization</a>
     </div>
   </div>
   <div class="wrap-mentoring">

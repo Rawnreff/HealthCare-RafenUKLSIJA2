@@ -100,6 +100,26 @@ mysqli_close($mysqli);
           ?>  
           </td>
         </tr>
+        <tr>
+          <th>Plan Expired Date</th>
+          <td>
+          <?php
+          $expired_date = date('Y-m-d', strtotime($subsData['activation_date'] . ' +30 days'));
+          echo $expired_date;
+
+          $now = time();
+          $expired_timestamp = strtotime($expired_date);
+          $diff_seconds = $expired_timestamp - $now;
+          $diff_days = ceil($diff_seconds / (60 * 60 * 24));
+
+          if ($diff_days > 1) {
+              echo ", Premium Plan will expired in $diff_days days";
+          } elseif ($diff_days == 1) {
+              echo ", Premium Plan will expired in $diff_days day";
+          }
+          ?>  
+          </td>
+        </tr>
       </table>
       <a href="../loginpage.php">Log Out</a>
       <a href="edit-profile.php?id=<?php echo $userData['id_user']; ?>">Edit Profile</a>

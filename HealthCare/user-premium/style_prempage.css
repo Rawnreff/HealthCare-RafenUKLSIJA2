@@ -154,6 +154,95 @@ a:nth-child(5):hover~.animation {
 }
 
 /* banner */
+.banner-person {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+
+.banner-person .text {
+  margin-bottom: 0px;
+  margin-left: -60px;
+  width: 400px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.banner-person .text span {
+  color: #569099;
+}
+
+.banner-person .text a {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #569099;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.banner-person .text a:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(4px 5px 6px rgba(0, 0, 0, 0.2));
+}
+
+.banner {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.banner .text {
+  width: 400px;
+  box-sizing: border-box;
+  margin-left: -10px;
+}
+
+.description {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.banner .text span {
+  color: #569099;
+}
+
+.banner {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.banner .text {
+  width: 400px;
+  box-sizing: border-box;
+  margin-left: -10px;
+}
+
+.description {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.banner .text span {
+  color: #569099;
+}
+
 .banner {
   height: 500px;
   width: 100%;
@@ -219,12 +308,12 @@ a:nth-child(5):hover~.animation {
   display: flex;
   padding: 0;
   background-color: #569099;
-  width: 200px;
+  width: 240px;
   height: 40px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -232,15 +321,12 @@ a:nth-child(5):hover~.animation {
 .add-person a {
   text-decoration: none;
   color: white;
+  transition: 0.7s;
 }
 
 .add-person:hover {
-  background-color: #569099;
-  opacity: 0.85;
-}
-
-.add-person a:hover {
-  color: #f6d809;
+  transform: scale(1.02);
+  filter: drop-shadow(3px 3.5px 5px rgba(0, 0, 0, 0.2));
 }
 
 /* home page */
@@ -510,4 +596,23 @@ a .card-img:hover {
 
 .profile-table td {
   background-color: #f2f2f2;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.table th,
+.table td {
+  border: 1px solid #8e8e8e;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #569099;
+  color: #ffffff;
 }

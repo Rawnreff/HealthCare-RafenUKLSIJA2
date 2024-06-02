@@ -57,10 +57,8 @@
                     <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['preferences']; ?></td>
                     <td><?php echo $data['additional_preferences']; ?></td>
-                    <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>"
-                            class="btn-hapus">Delete</a> </td>
-                    <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>"
-                            class="btn-update">Update</a> </td>
+                    <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>">Delete</a> </td>
+                    <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>">Update</a> </td>
                 </tr>
             <?php } ?>
         </table>
