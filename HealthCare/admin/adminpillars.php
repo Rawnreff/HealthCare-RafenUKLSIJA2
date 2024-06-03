@@ -10,7 +10,14 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style_main.css">
-    <script src="main.js"></script>
+    <script>
+        function confirmDelete(event, id) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete this data?")) {
+                window.location.href = 'adminpillarsdelete.php?id=' + id;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -59,10 +66,8 @@
                     <td><?php echo $data['title']; ?></td>
                     <td><?php echo $data['information']; ?></td>
                     <td><?php echo $data['content']; ?></td>
-                    <td><a href="adminpillarsdelete.php?id=<?php echo $data['id_pillars']; ?>" class="btn-hapus">Delete</a>
-                    </td>
-                    <td><a href="adminpillarsupdate.php?id=<?php echo $data['id_pillars']; ?>" class="btn-update">Update</a>
-                    </td>
+                    <td><a href="#" onclick="confirmDelete(event, <?php echo $data['id_pillars']; ?>)" class="btn-hapus">Delete</a></td>
+                    <td><a href="adminpillarsupdate.php?id=<?php echo $data['id_pillars']; ?>" class="btn-update">Update</a></td>
                 </tr>
             <?php } ?>
         </table>

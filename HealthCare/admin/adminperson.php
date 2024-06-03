@@ -10,7 +10,14 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style_main.css">
-    <script src="main.js"></script>
+    <script>
+        function confirmDelete(event, id) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete this data?")) {
+                window.location.href = 'adminpersondelete.php?id=' + id;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -57,7 +64,7 @@
                     <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['preferences']; ?></td>
                     <td><?php echo $data['additional_preferences']; ?></td>
-                    <td><a href="adminpersondelete.php?id=<?php echo $data['id_personalization']; ?>">Delete</a> </td>
+                    <td><a href="#" onclick="confirmDelete(event, <?php echo $data['id_personalization']; ?>)" class="btn-hapus">Delete</a></td>
                     <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>">Update</a> </td>
                 </tr>
             <?php } ?>
