@@ -53,19 +53,27 @@
             </tr>
             <?php
             include '../connect.php';
+
+            // Menghitung total data
+            $query_count = mysqli_query($mysqli, "SELECT COUNT(*) as total FROM personalization") or die(mysqli_error($mysqli));
+            $count_result = mysqli_fetch_assoc($query_count);
+            $total_data = $count_result['total'];
+
+            // Mengambil data personalization dengan urutan descending berdasarkan id_personalization
             $query_mysql = mysqli_query($mysqli, "SELECT personalization.*, user.username 
             FROM personalization 
-            JOIN user ON personalization.id_user = user.id_user") or die(mysqli_error($mysqli));
-            $nomor = 1;
+            JOIN user ON personalization.id_user = user.id_user
+            ORDER BY personalization.id_personalization DESC") or die(mysqli_error($mysqli));
+
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
                 <tr>
-                    <td><?php echo $nomor++; ?></td>
+                    <td><?php echo $total_data--; ?></td>
                     <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['preferences']; ?></td>
                     <td><?php echo $data['additional_preferences']; ?></td>
                     <td><a href="#" onclick="confirmDelete(event, <?php echo $data['id_personalization']; ?>)" class="btn-hapus">Delete</a></td>
-                    <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>">Update</a> </td>
+                    <td><a href="adminpersonupdate.php?id=<?php echo $data['id_personalization']; ?>" class="btn-update">Update</a> </td>
                 </tr>
             <?php } ?>
         </table>

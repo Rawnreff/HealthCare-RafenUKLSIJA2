@@ -56,17 +56,25 @@
             </tr>
             <?php
             include '../connect.php';
+
+            // Menghitung total data
+            $query_count = mysqli_query($mysqli, "SELECT COUNT(*) as total FROM article") or die(mysqli_error($mysqli));
+            $count_result = mysqli_fetch_assoc($query_count);
+            $total_data = $count_result['total'];
+
+            // Mengambil data article dengan urutan descending berdasarkan id_article
             $query_mysql = mysqli_query($mysqli,"SELECT a.*, u.username
             FROM article a 
             JOIN personalization p 
             ON a.id_personalization = p.id_personalization 
             JOIN user u 
-            ON p.id_user = u.id_user") or die(mysqli_error($mysqli));
-            $nomor = 1;
+            ON p.id_user = u.id_user
+            ORDER BY a.id_article DESC") or die(mysqli_error($mysqli));
+
             while ($data = mysqli_fetch_array($query_mysql)) {
             ?>
                 <tr>
-                    <td><?php echo $nomor++; ?></td>
+                    <td><?php echo $total_data--; ?></td>
                     <td><?php echo $data['username']; ?></td>
                     <td><?php echo $data['preferences_type']; ?></td>
                     <td><img src="img/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>

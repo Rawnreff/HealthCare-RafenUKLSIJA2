@@ -55,12 +55,19 @@
             </tr>
             <?php
             include '../connect.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM pillars") or die(mysqli_error($mysqli));
-            $nomor = 1;
+
+            // Menghitung total data
+            $query_count = mysqli_query($mysqli, "SELECT COUNT(*) as total FROM pillars") or die(mysqli_error($mysqli));
+            $count_result = mysqli_fetch_assoc($query_count);
+            $total_data = $count_result['total'];
+
+            // Mengambil data pillars dengan urutan descending berdasarkan id_pillars
+            $query_mysql = mysqli_query($mysqli, "SELECT * FROM pillars ORDER BY id_pillars DESC") or die(mysqli_error($mysqli));
+            
             while ($data = mysqli_fetch_array($query_mysql)) {
                 ?>
                 <tr>
-                    <td><?php echo $nomor++; ?></td>
+                    <td><?php echo $total_data--; ?></td>
                     <td><?php echo $data['type']; ?></td>
                     <td><img src="img-pillars/<?php echo $data["image"]; ?>" width="70" title="<?php echo $data['image']; ?>"></td>
                     <td><?php echo $data['title']; ?></td>

@@ -321,11 +321,11 @@ a:nth-child(5):hover~.animation {
 .add-person a {
   text-decoration: none;
   color: white;
-  transition: 0.7s;
 }
 
 .add-person:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
+  transition: 0.4s;
   filter: drop-shadow(3px 3.5px 5px rgba(0, 0, 0, 0.2));
 }
 
