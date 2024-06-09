@@ -39,6 +39,7 @@
         <h1 class="heading">Personalization Data</h1>
         <br>
         <br>
+        <a href="../loginpage.php" class="btn">Log Out</a>
         <a href="adminpersonadd.php" class="btn">Add Personalization</a>
         <br>
         <br>
@@ -77,9 +78,6 @@
                 </tr>
             <?php } ?>
         </table>
-        <br>
-        <br>
-        <a href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 

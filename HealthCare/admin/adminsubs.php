@@ -39,6 +39,7 @@
         <h1 class="heading">Subscription Data</h1>
         <br>
         <br>
+        <a href="../loginpage.php" class="btn">Log Out</a>
         <a href="adminsubsadd.php" class="btn">Add Subscription</a>
         <br>
         <br>
@@ -81,9 +82,6 @@
                 </tr>
             <?php } ?>
         </table>
-        <br>
-        <br>
-        <a href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 

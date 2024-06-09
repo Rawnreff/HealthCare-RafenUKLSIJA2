@@ -72,7 +72,7 @@ $mencari = $_SESSION['id_user'];
     LEFT JOIN personalization 
     ON article.preferences_type = personalization.preferences AND personalization.id_user = $mencari
     WHERE personalization.id_user = $mencari
-    ") or die(mysqli_error($mysqli));
+    ORDER BY article.id_article DESC") or die(mysqli_error($mysqli)); // Menambahkan ORDER BY di sini
 
     $articles = [];
     while ($data = mysqli_fetch_array($query_mysql)) {

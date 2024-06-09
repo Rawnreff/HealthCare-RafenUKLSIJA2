@@ -39,6 +39,7 @@
         <h1 class="heading">User Data</h1>
         <br>
         <br>
+        <a href="../loginpage.php" class="btn">Log Out</a>
         <a href="adminuseradd.php" class="btn">Add User</a>
         <br>
         <br>
@@ -78,9 +79,6 @@
                 </tr>
             <?php } ?>
         </table>
-        <br>
-        <br>
-        <a href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 

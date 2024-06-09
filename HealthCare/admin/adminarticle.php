@@ -39,6 +39,7 @@
         <h1 class="heading">Article Data</h1>
         <br>
         <br>
+        <a href="../loginpage.php" class="btn">Log Out</a>
         <a href="adminarticleadd.php" class="btn">Add Article</a>
         <br>
         <br>
@@ -86,9 +87,6 @@
                 </tr>
             <?php } ?>
         </table>
-        <br>
-        <br>
-        <a href="../loginpage.php" class="btn">Log Out</a>
     </section>
 </body>
 
